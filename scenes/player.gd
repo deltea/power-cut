@@ -29,16 +29,17 @@ func _physics_process(delta: float) -> void:
 	coyote_timer += delta
 	buffer_timer += delta
 
+	var x_input := Input.get_axis("left", "right")
+
 	if not is_on_floor():
 		if velocity.y > 0:
-			if is_on_wall():
+			if is_on_wall() and x_input:
 				velocity.y = wall_fall_velocity
 			else:
 				velocity.y += fall_gravity * delta
 		else:
 			velocity.y += gravity * delta
 
-	var x_input := Input.get_axis("left", "right")
 	sprite.target_rotation_degrees = x_input * run_tilt_angle
 	if x_input:
 		velocity.x = move_toward(velocity.x, x_input * max_speed, acceleration)

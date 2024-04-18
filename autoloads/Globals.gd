@@ -1,6 +1,7 @@
 extends Node
 
 var player: Player
+var camera: Camera
 
 var dynamics_solver_scene = preload("res://utils/dynamics/dynamics_solver.tscn")
 var dynamics_solver_vector_scene = preload("res://utils/dynamics/dynamics_solver_vector.tscn")
