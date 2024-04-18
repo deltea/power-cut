@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://kvi2j4wq3m45"]
+
+[ext_resource type="PackedScene" uid="uid://dcdr6lakd0s6j" path="res://scenes/input_control.tscn" id="1_f7os6"]
+[ext_resource type="Texture2D" uid="uid://ck37fves7end5" path="res://assets/lever-on.png" id="2_chqrl"]
+[ext_resource type="Script" path="res://scenes/input-control/lever.gd" id="2_jmgw8"]
+[ext_resource type="Texture2D" uid="uid://rwuhj65iggqc" path="res://assets/lever-off.png" id="4_yng4n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wuyi"]
+size = Vector2(34, 22)
+
+[node name="Lever" instance=ExtResource("1_f7os6")]
+script = ExtResource("2_jmgw8")
+enabled_texture = ExtResource("2_chqrl")
+disabled_texture = ExtResource("4_yng4n")
+default_enabled = false
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource("2_chqrl")
+offset = Vector2(0, -8)
+
+[node name="CollisionShape" parent="." index="1"]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_8wuyi")
+
+[connection signal="activate" from="." to="." method="_on_activate"]

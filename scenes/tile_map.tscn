@@ -487,6 +487,6 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_gbcoo")
 
 [node name="TileMap" type="TileMap"]
-z_index = 1
+z_index = 2
 tile_set = SubResource("TileSet_838wr")
 format = 2

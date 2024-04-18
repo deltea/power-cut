@@ -15,7 +15,7 @@ func _enter_tree() -> void:
 	Globals.camera = self
 
 func _ready() -> void:
-	original_pos = position
+	original_pos = offset
 	# zoom = Vector2(5, 5)
 
 	limit_top = -RoomManager.current_room.limit_y
@@ -33,11 +33,11 @@ func _process(delta: float) -> void:
 		rotation_degrees = lerp(rotation_degrees, 0.0 + player_x_tilt, rotation_speed * delta)
 
 	if shake_duration > 0:
-		position = original_pos + Vector2.from_angle(randf_range(0, PI*2)) * shake_magnitude
+		offset = original_pos + Vector2.from_angle(randf_range(0, PI*2)) * shake_magnitude
 		shake_duration -= delta * shake_damping_speed
 	else:
 		shake_duration = 0
-		position = original_pos
+		offset = original_pos
 
 func shake(duration: float, magnitude: float):
 	shake_duration = duration

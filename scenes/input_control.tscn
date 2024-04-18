@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcdr6lakd0s6j"]
+
+[ext_resource type="Script" path="res://scenes/input_control.gd" id="1_4thvu"]
+[ext_resource type="PackedScene" uid="uid://8c6n3jqhpthv" path="res://utils/sprite-plus/sprite.tscn" id="1_mb485"]
+[ext_resource type="Script" path="res://utils/dynamics/dynamics_resource.gd" id="3_kj2dw"]
+
+[sub_resource type="Resource" id="Resource_ghki0"]
+script = ExtResource("3_kj2dw")
+f = 4.0
+z = 0.4
+r = 2.0
+
+[node name="InputControl" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_4thvu")
+
+[node name="Sprite" parent="." instance=ExtResource("1_mb485")]
+scale_dynamics = SubResource("Resource_ghki0")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

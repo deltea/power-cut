@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://hlp28anwneby"]
+[gd_scene load_steps=7 format=3 uid="uid://hlp28anwneby"]
 
 [ext_resource type="Script" path="res://scripts/room.gd" id="1_70pcd"]
 [ext_resource type="Resource" path="res://color-palettes/bumblebit.tres" id="2_f5uyb"]
 [ext_resource type="PackedScene" uid="uid://b38kvkou3xljd" path="res://scenes/tile_map.tscn" id="2_fdhfu"]
 [ext_resource type="PackedScene" uid="uid://234kf4u6ra8h" path="res://scenes/player.tscn" id="4_eiye2"]
+[ext_resource type="PackedScene" uid="uid://kvi2j4wq3m45" path="res://scenes/input-control/lever.tscn" id="6_03nm4"]
+[ext_resource type="Texture2D" uid="uid://cctni0n1wwf7n" path="res://assets/background.png" id="6_h05qf"]
 
 [node name="LevelRoom" type="Node2D"]
 script = ExtResource("1_70pcd")
@@ -14,3 +16,10 @@ layer_0/tile_data = PackedInt32Array(458738, 131072, 1, 393202, 131072, 1, 32766
 
 [node name="Player" parent="." instance=ExtResource("4_eiye2")]
 position = Vector2(0, 95)
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("6_h05qf")
+
+[node name="Lever" parent="." instance=ExtResource("6_03nm4")]
+position = Vector2(-123, 112)
