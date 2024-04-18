@@ -16,12 +16,14 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	original_pos = position
-	zoom = Vector2(5, 5)
+	# zoom = Vector2(5, 5)
 
 	limit_top = -RoomManager.current_room.limit_y
 	limit_bottom = RoomManager.current_room.limit_y
 	limit_left = -RoomManager.current_room.limit_x
 	limit_right = RoomManager.current_room.limit_x
+
+	reset_smoothing()
 
 func _process(delta: float) -> void:
 	zoom = lerp(zoom, target_zoom, zoom_speed * delta)

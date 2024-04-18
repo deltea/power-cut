@@ -27,7 +27,6 @@ collision_layer = 2
 script = ExtResource("1_fwgjm")
 
 [node name="Camera" parent="." instance=ExtResource("5_46osi")]
-position = Vector2(0, -7)
 
 [node name="Sprite" parent="." instance=ExtResource("2_14t4h")]
 texture = ExtResource("3_t6rku")
