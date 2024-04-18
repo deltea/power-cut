@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ColorPaletteResource" load_steps=2 format=3 uid="uid://bdlcf2pydcano"]
+
+[ext_resource type="Script" path="res://scripts/color_palette_resource.gd" id="1_dm451"]
+
+[resource]
+script = ExtResource("1_dm451")
+primary = Color(0.905882, 0.427451, 0.541176, 1)
+secondary = Color(0.435294, 0.262745, 0.403922, 1)
+dark = Color(0.145098, 0.211765, 0.341176, 1)
+light = Color(0.972549, 0.913725, 0.898039, 1)

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://8c6n3jqhpthv"]
+
+[ext_resource type="Script" path="res://utils/sprite-plus/sprite.gd" id="1_ynhrn"]
+[ext_resource type="Script" path="res://utils/dynamics/dynamics_resource.gd" id="2_ud3nj"]
+
+[sub_resource type="Resource" id="Resource_e0avt"]
+script = ExtResource("2_ud3nj")
+f = 4.0
+z = 0.2
+r = 2.0
+
+[sub_resource type="Resource" id="Resource_iv2gy"]
+script = ExtResource("2_ud3nj")
+f = 4.0
+z = 0.2
+r = 2.0
+
+[node name="Sprite" type="Sprite2D"]
+script = ExtResource("1_ynhrn")
+scale_dynamics = SubResource("Resource_e0avt")
+rotation_dynamics = SubResource("Resource_iv2gy")
+
+[node name="FlashTimer" type="Timer" parent="."]

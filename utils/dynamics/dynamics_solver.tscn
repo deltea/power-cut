@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0yx7ehon8tes"]
+
+[ext_resource type="Script" path="res://utils/dynamics/dynamics_solver.gd" id="1_aslre"]
+
+[node name="DynamicsSolver" type="Node"]
+script = ExtResource("1_aslre")
