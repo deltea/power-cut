@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://hlp28anwneby"]
+[gd_scene load_steps=9 format=3 uid="uid://hlp28anwneby"]
 
 [ext_resource type="Script" path="res://scripts/room.gd" id="1_70pcd"]
 [ext_resource type="Resource" path="res://color-palettes/bumblebit.tres" id="2_f5uyb"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://kvi2j4wq3m45" path="res://scenes/input-control/lever.tscn" id="6_03nm4"]
 [ext_resource type="Texture2D" uid="uid://cctni0n1wwf7n" path="res://assets/background.png" id="6_h05qf"]
 [ext_resource type="PackedScene" uid="uid://bxr2sbhd375tc" path="res://scenes/button.tscn" id="7_w5i8u"]
+[ext_resource type="PackedScene" uid="uid://c0qxefqb235va" path="res://scenes/door.tscn" id="8_dnkm4"]
 
 [node name="LevelRoom" type="Node2D"]
 script = ExtResource("1_70pcd")
@@ -24,6 +25,10 @@ texture = ExtResource("6_h05qf")
 
 [node name="Lever" parent="." instance=ExtResource("6_03nm4")]
 position = Vector2(-123, 112)
+default_enabled = true
 
 [node name="Button" parent="." instance=ExtResource("7_w5i8u")]
 position = Vector2(103, 112)
+
+[node name="Door" parent="." instance=ExtResource("8_dnkm4")]
+position = Vector2(30, 96)
