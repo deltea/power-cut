@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ixj7oladamx7"]
+
+[ext_resource type="Script" path="res://scenes/power_line.gd" id="1_b32hc"]
+
+[node name="PowerLine" type="Line2D"]
+z_index = 2
+points = PackedVector2Array(40, 11)
+width = 4.0
+joint_mode = 2
+script = ExtResource("1_b32hc")
