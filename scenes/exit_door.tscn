@@ -35,4 +35,3 @@ initial_velocity_min = 20.0
 initial_velocity_max = 20.0
 scale_amount_max = 2.0
 scale_amount_curve = SubResource("Curve_n1u8a")
-color = Color(1, 0, 0, 1)

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://uqdq7qwompw0"]
+
+[ext_resource type="Script" path="res://rooms/level_select_room.gd" id="1_bxplm"]
+[ext_resource type="Resource" path="res://color-palettes/bumblebit.tres" id="2_7cn1l"]
+
+[sub_resource type="Curve" id="Curve_v2l35"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_8si01"]
+_data = [Vector2(0, 0), 0.0, 15.1696, 0, 0, Vector2(0.105856, 1), 0.0, 0.0, 0, 0, Vector2(0.817568, 1), 5.63074e-07, 5.63074e-07, 0, 0, Vector2(1, 0), -5.26945, 0.0, 0, 0]
+point_count = 4
+
+[node name="LevelSelectRoom" type="Node2D"]
+script = ExtResource("1_bxplm")
+color_palette = ExtResource("2_7cn1l")
+
+[node name="Stars" type="CPUParticles2D" parent="."]
+amount = 15
+lifetime = 4.0
+preprocess = 10.0
+emission_shape = 3
+emission_rect_extents = Vector2(240, 135)
+gravity = Vector2(0, 0)
+angle_min = -360.0
+angle_max = 360.0
+angle_curve = SubResource("Curve_v2l35")
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+scale_amount_curve = SubResource("Curve_8si01")
+
+[node name="Camera" type="Camera2D" parent="."]

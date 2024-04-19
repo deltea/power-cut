@@ -1,6 +1,7 @@
 class_name Room extends Node2D
 
 @export var color_palette: ColorPaletteResource
+@export var process_color_palette = false
 
 @export_category("Camera Limits")
 @export var limit_x = 240

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://hlp28anwneby"]
+[gd_scene load_steps=7 format=3 uid="uid://hlp28anwneby"]
 
 [ext_resource type="Script" path="res://scripts/room.gd" id="1_70pcd"]
 [ext_resource type="Resource" path="res://color-palettes/bumblebit.tres" id="2_f5uyb"]
@@ -6,8 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://234kf4u6ra8h" path="res://scenes/player.tscn" id="4_eiye2"]
 [ext_resource type="PackedScene" uid="uid://cpgqulmxaxper" path="res://scenes/exit_door.tscn" id="6_00enj"]
 [ext_resource type="Texture2D" uid="uid://cctni0n1wwf7n" path="res://assets/background.png" id="6_h05qf"]
-[ext_resource type="PackedScene" uid="uid://bxr2sbhd375tc" path="res://scenes/button.tscn" id="7_w5i8u"]
-[ext_resource type="PackedScene" uid="uid://c0qxefqb235va" path="res://scenes/door.tscn" id="8_dnkm4"]
 
 [node name="LevelRoom" type="Node2D"]
 script = ExtResource("1_70pcd")
@@ -23,15 +21,7 @@ position = Vector2(0, 91)
 z_index = -1
 texture = ExtResource("6_h05qf")
 
-[node name="Components" type="Node" parent="."]
-
-[node name="ExitDoor" parent="." node_paths=PackedStringArray("control") instance=ExtResource("6_00enj")]
+[node name="ExitDoor" parent="." instance=ExtResource("6_00enj")]
 position = Vector2(0, 78)
-control = NodePath("../Button")
 
-[node name="Button" parent="." instance=ExtResource("7_w5i8u")]
-position = Vector2(-86, 96)
-
-[node name="Door" parent="." node_paths=PackedStringArray("control") instance=ExtResource("8_dnkm4")]
-position = Vector2(44, 80)
-control = NodePath("../Button")
+[node name="Components" type="Node" parent="."]

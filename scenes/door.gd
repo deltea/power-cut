@@ -18,8 +18,9 @@ func _ready() -> void:
 	sprite.offset.y = offset
 	sprite.position = Vector2(0, -offset)
 
-	control.activate.connect(_on_activate)
-	_on_activate(control.enabled)
+	if control:
+		control.activate.connect(_on_activate)
+		_on_activate(control.enabled)
 
 func _on_activate(value: bool):
 	open = value if inverted else not value
