@@ -4,15 +4,20 @@ class_name LevelSelect extends Room
 @export var level_resources: Array[LevelResource]
 @export var select_circle_gap = Vector2(150.0, 25.0)
 @export var dotted_line_padding = 30.0
+@export var stars_parallax = 0.8
+@export var stars_amount = 50
+@export var stars_box: Vector2 = Vector2(1920, 540)
 
 @onready var camera: Camera2D = $Camera
+@onready var stars: Node2D = $Stars
 @onready var camera_dynamics_solver := Globals.create_dynamics_vector(camera_dynamics)
 
+var index = 0
 var camera_target_position = Vector2.ZERO
 var level_select_circles: Array[LevelSelectCircle] = []
-var index = 0
 var level_select_circle_scene = preload("res://scenes/ui/level_select_circle.tscn")
 var dotted_line_scene = preload("res://scenes/dotted_line.tscn")
+var star_scene = preload("res://scenes/star.tscn")
 
 func _ready() -> void:
 	for i in range(len(level_resources)):
@@ -32,7 +37,7 @@ func _ready() -> void:
 			level_select_circle.selected = true
 
 	for x in range(len(level_select_circles)):
-		if x == len(level_resources) - 1: return
+		if x == len(level_resources) - 1: break
 
 		var circle = level_select_circles[x]
 		var next_circle = level_select_circles[x + 1]
@@ -44,8 +49,17 @@ func _ready() -> void:
 		dotted_line.add_point(next_circle.position + offset, 1)
 		add_child(dotted_line)
 
+	for j in range(stars_amount):
+		print(j)
+		var star = star_scene.instantiate() as Sprite2D
+		var x = randf_range(0, stars_box.x)
+		var y = randf_range(-stars_box.y / 2, stars_box.y / 2)
+		star.position = Vector2(x - 240, y)
+		stars.add_child(star)
+
 func _process(_delta: float) -> void:
 	camera.position = camera_dynamics_solver.update(camera_target_position)
+	stars.position = -camera.position * stars_parallax
 
 	var input = 0
 	if Input.is_action_just_pressed("left"): input -= 1

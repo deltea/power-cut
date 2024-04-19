@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://cseovp0xeur6b" path="res://assets/generic/dotted-line.png" id="1_onbc8"]
 
 [node name="DottedLine" type="Line2D"]
-z_index = -1
+top_level = true
+z_index = 1
 texture_repeat = 2
 width = 4.0
 texture = ExtResource("1_onbc8")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://8aoku2ys02cj"]
+
+[ext_resource type="Texture2D" uid="uid://cpr0y7y4d34li" path="res://assets/generic/circle-small.png" id="1_0kel3"]
+[ext_resource type="PackedScene" uid="uid://d0vw7prgwjdul" path="res://utils/trail/trail.tscn" id="2_3jvxt"]
+
+[sub_resource type="Curve" id="Curve_ke2qq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 1, Vector2(1, 1), 0.0, 0.0, 1, 0]
+point_count = 2
+
+[node name="Star" type="Sprite2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_0kel3")
+
+[node name="Trail" parent="." instance=ExtResource("2_3jvxt")]
+width = 4.0
+width_curve = SubResource("Curve_ke2qq")
+length = 5.0

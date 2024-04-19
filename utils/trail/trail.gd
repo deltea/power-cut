@@ -1,7 +1,7 @@
 class_name Trail extends Line2D
 
 @export var emitting = true
-@export var length = 10
+@export var length = 10.0
 
 var queue: Array[Vector2]
 

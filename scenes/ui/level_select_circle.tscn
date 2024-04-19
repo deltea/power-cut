@@ -13,6 +13,7 @@ font = ExtResource("4_ug8or")
 font = ExtResource("4_ug8or")
 
 [node name="LevelSelectCircle" type="Node2D"]
+z_index = 1
 script = ExtResource("1_hsr2r")
 
 [node name="Sprite" parent="." instance=ExtResource("2_6dw66")]

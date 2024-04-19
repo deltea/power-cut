@@ -1,33 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://uqdq7qwompw0"]
+[gd_scene load_steps=6 format=3 uid="uid://uqdq7qwompw0"]
 
 [ext_resource type="Script" path="res://rooms/level_select_room.gd" id="1_bxplm"]
 [ext_resource type="Resource" path="res://color-palettes/bumblebit.tres" id="2_7cn1l"]
 [ext_resource type="Script" path="res://utils/dynamics/dynamics_resource.gd" id="2_nwmo1"]
 [ext_resource type="Resource" uid="uid://bk6a10vhvtxlo" path="res://rooms/levels/level_1.tres" id="3_25x6q"]
-[ext_resource type="Shader" path="res://shaders/3d.gdshader" id="5_6vm76"]
-[ext_resource type="Texture2D" uid="uid://65uxpr6mjwoy" path="res://assets/ui/level-select-cursor.png" id="5_dn1x1"]
 
 [sub_resource type="Resource" id="Resource_xwxbj"]
 script = ExtResource("2_nwmo1")
-f = 4.0
+f = 3.0
 z = 0.5
 r = 2.0
-
-[sub_resource type="Curve" id="Curve_v2l35"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="Curve" id="Curve_8si01"]
-_data = [Vector2(0, 0), 0.0, 15.1696, 0, 0, Vector2(0.105856, 1), 0.0, 0.0, 0, 0, Vector2(0.817568, 1), 5.63074e-07, 5.63074e-07, 0, 0, Vector2(1, 0), -5.26945, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uv1on"]
-shader = ExtResource("5_6vm76")
-shader_parameter/fov = 1.0
-shader_parameter/cull_back = false
-shader_parameter/y_rot = 0.0
-shader_parameter/x_rot = 0.0
-shader_parameter/inset = 0.0
 
 [node name="LevelSelectRoom" type="Node2D"]
 script = ExtResource("1_bxplm")
@@ -35,25 +17,7 @@ camera_dynamics = SubResource("Resource_xwxbj")
 level_resources = Array[Resource("res://scripts/level_resource.gd")]([ExtResource("3_25x6q"), ExtResource("3_25x6q"), ExtResource("3_25x6q"), ExtResource("3_25x6q"), ExtResource("3_25x6q")])
 color_palette = ExtResource("2_7cn1l")
 
-[node name="Stars" type="CPUParticles2D" parent="."]
-z_index = -2
-amount = 15
-lifetime = 4.0
-preprocess = 10.0
-emission_shape = 3
-emission_rect_extents = Vector2(240, 135)
-gravity = Vector2(0, 0)
-angle_min = -360.0
-angle_max = 360.0
-angle_curve = SubResource("Curve_v2l35")
-scale_amount_min = 2.0
-scale_amount_max = 4.0
-scale_amount_curve = SubResource("Curve_8si01")
-
 [node name="Camera" type="Camera2D" parent="."]
 
-[node name="Cursor" type="Sprite2D" parent="Camera"]
-visible = false
-material = SubResource("ShaderMaterial_uv1on")
-position = Vector2(0, 59)
-texture = ExtResource("5_dn1x1")
+[node name="Stars" type="Node2D" parent="."]
+z_index = -1
