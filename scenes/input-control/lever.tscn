@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://rwuhj65iggqc" path="res://assets/lever-off.png" id="4_yng4n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wuyi"]
-size = Vector2(34, 22)
+size = Vector2(28, 22)
 
 [node name="Lever" instance=ExtResource("1_f7os6")]
 script = ExtResource("2_jmgw8")

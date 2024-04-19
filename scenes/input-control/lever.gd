@@ -9,6 +9,10 @@ var enabled: bool
 func _ready() -> void:
 	set_enabled(false)
 
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("interact") and player_touching:
+		activate.emit()
+
 func _on_activate() -> void:
 	set_enabled(not enabled)
 
