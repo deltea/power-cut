@@ -1,7 +1,5 @@
 class_name InputControl extends Area2D
 
-@export var connection: Node2D
-
 signal activate
 
 @onready var sprite: Sprite = $Sprite
