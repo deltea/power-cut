@@ -8,9 +8,6 @@ func _ready() -> void:
 	update_color_palette()
 	RenderingServer.set_default_clear_color(colors.dark)
 
-func _process(_delta: float) -> void:
-	update_color_palette()
-
 func update_color_palette():
 	colors = RoomManager.current_room.color_palette
 

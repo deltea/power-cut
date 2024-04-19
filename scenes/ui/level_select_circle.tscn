@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://cnmr7rmu2r1wb"]
+
+[ext_resource type="Script" path="res://scenes/ui/level_select_circle.gd" id="1_hsr2r"]
+[ext_resource type="PackedScene" uid="uid://8c6n3jqhpthv" path="res://utils/sprite-plus/sprite.tscn" id="2_6dw66"]
+[ext_resource type="Texture2D" uid="uid://dwt1bndsilqnq" path="res://assets/ui/level-select-border.png" id="3_hslak"]
+[ext_resource type="Texture2D" uid="uid://dnes0ie7ot36e" path="res://assets/ui/level-select-fill.png" id="3_uck3l"]
+[ext_resource type="FontFile" uid="uid://cchy2jc4rwkr0" path="res://assets/fonts/hefty-me.ttf" id="4_ug8or"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tbutb"]
+font = ExtResource("4_ug8or")
+
+[sub_resource type="LabelSettings" id="LabelSettings_vgx3g"]
+font = ExtResource("4_ug8or")
+
+[node name="LevelSelectCircle" type="Node2D"]
+script = ExtResource("1_hsr2r")
+
+[node name="Sprite" parent="." instance=ExtResource("2_6dw66")]
+texture = ExtResource("3_uck3l")
+
+[node name="Title" type="Label" parent="Sprite"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -43.5
+offset_top = -68.0
+offset_right = 11.5
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "The Wheel"
+label_settings = SubResource("LabelSettings_tbutb")
+
+[node name="Num" type="Label" parent="Sprite"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "5"
+label_settings = SubResource("LabelSettings_vgx3g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Background" type="Sprite2D" parent="Sprite"]
+
+[node name="Border" type="Sprite2D" parent="Sprite"]
+visible = false
+texture = ExtResource("3_hslak")

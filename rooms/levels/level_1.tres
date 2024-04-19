@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=3 format=3 uid="uid://bk6a10vhvtxlo"]
+
+[ext_resource type="Script" path="res://scripts/level_resource.gd" id="1_7dnea"]
+[ext_resource type="PackedScene" uid="uid://by4ry8e20r1l6" path="res://rooms/levels/level_1.tscn" id="1_m3fax"]
+
+[resource]
+script = ExtResource("1_7dnea")
+name = "The Begenning"
+scene = ExtResource("1_m3fax")
