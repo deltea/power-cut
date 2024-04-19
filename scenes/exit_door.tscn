@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://cpgqulmxaxper"]
+
+[ext_resource type="Script" path="res://scenes/exit_door.gd" id="1_iqvna"]
+[ext_resource type="PackedScene" uid="uid://8c6n3jqhpthv" path="res://utils/sprite-plus/sprite.tscn" id="2_k2re2"]
+[ext_resource type="Texture2D" uid="uid://bu8aomehk1w1n" path="res://assets/exit-door.png" id="3_vs023"]
+[ext_resource type="Texture2D" uid="uid://cpr0y7y4d34li" path="res://assets/generic/circle-small.png" id="4_5hxhk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exmc5"]
+size = Vector2(32, 39)
+
+[sub_resource type="Curve" id="Curve_n1u8a"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.33596, 0.0, 0, 0]
+point_count = 2
+
+[node name="ExitDoor" type="Area2D"]
+script = ExtResource("1_iqvna")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_exmc5")
+
+[node name="Sprite" parent="." instance=ExtResource("2_k2re2")]
+position = Vector2(0, 18)
+texture = ExtResource("3_vs023")
+offset = Vector2(0, -18)
+
+[node name="CPUParticles" type="CPUParticles2D" parent="."]
+amount = 10
+lifetime = 1.5
+preprocess = 3.0
+texture = ExtResource("4_5hxhk")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_n1u8a")
+color = Color(1, 0, 0, 1)

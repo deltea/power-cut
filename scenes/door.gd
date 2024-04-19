@@ -18,11 +18,12 @@ func _ready() -> void:
 	sprite.offset.y = offset
 	sprite.position = Vector2(0, -offset)
 
-func _process(_delta: float) -> void:
-	if not control:
-		printerr("No control node set for " + name + ", will not activate")
-		return
+	control.activate.connect(_on_activate)
+	_on_activate(control.enabled)
 
+func _on_activate(value: bool):
+	open = value if inverted else not value
 	collider.disabled = not open
+
+func _process(_delta: float) -> void:
 	sprite.scale.y = scale_dynamics_solver.update(1 if open else 0)
-	open = control.enabled if inverted else not control.enabled

@@ -1,6 +1,6 @@
 class_name InputControl extends Area2D
 
-signal activate
+signal activate(value: bool)
 
 @export var power_line: PowerLine
 
