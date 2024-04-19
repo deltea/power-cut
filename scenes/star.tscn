@@ -14,4 +14,4 @@ texture = ExtResource("1_0kel3")
 [node name="Trail" parent="." instance=ExtResource("2_3jvxt")]
 width = 4.0
 width_curve = SubResource("Curve_ke2qq")
-length = 5.0
+length = 4.0
