@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://rwuhj65iggqc" path="res://assets/lever-off.png" id="4_yng4n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wuyi"]
-size = Vector2(28, 22)
+size = Vector2(30, 15)
 
 [node name="Lever" instance=ExtResource("1_f7os6")]
 script = ExtResource("2_jmgw8")
@@ -19,7 +19,7 @@ texture = ExtResource("2_chqrl")
 offset = Vector2(0, -8)
 
 [node name="CollisionShape" parent="." index="1"]
-position = Vector2(0, -11)
+position = Vector2(-1, -7.5)
 shape = SubResource("RectangleShape2D_8wuyi")
 
 [connection signal="activate" from="." to="." method="_on_activate"]

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://7nea8v5opjlf" path="res://assets/button-down.png" id="3_ianww"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6d7xp"]
-size = Vector2(28, 14)
+size = Vector2(28, 5)
 
 [node name="Button" instance=ExtResource("1_x3vlt")]
 script = ExtResource("2_bokxo")
@@ -18,7 +18,7 @@ texture = ExtResource("2_72evl")
 offset = Vector2(0, -8)
 
 [node name="CollisionShape" parent="." index="1"]
-position = Vector2(0, -7)
+position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_6d7xp")
 
 [connection signal="activate" from="." to="." method="_on_activate"]

@@ -6,9 +6,9 @@
 
 [sub_resource type="Resource" id="Resource_mvic3"]
 script = ExtResource("2_o42e5")
-f = 4.0
-z = 0.8
-r = 2.0
+f = 10.0
+z = 1.0
+r = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2dba1"]
 size = Vector2(8, 32)
