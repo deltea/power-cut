@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnmr7rmu2r1wb"]
+[gd_scene load_steps=10 format=3 uid="uid://cnmr7rmu2r1wb"]
 
 [ext_resource type="Script" path="res://scenes/ui/level_select_circle.gd" id="1_hsr2r"]
 [ext_resource type="PackedScene" uid="uid://8c6n3jqhpthv" path="res://utils/sprite-plus/sprite.tscn" id="2_6dw66"]
 [ext_resource type="Texture2D" uid="uid://dwt1bndsilqnq" path="res://assets/ui/level-select-border.png" id="3_hslak"]
 [ext_resource type="Texture2D" uid="uid://dnes0ie7ot36e" path="res://assets/ui/level-select-fill.png" id="3_uck3l"]
 [ext_resource type="FontFile" uid="uid://cchy2jc4rwkr0" path="res://assets/fonts/hefty-me.ttf" id="4_ug8or"]
+[ext_resource type="Texture2D" uid="uid://cuoe8stspvofu" path="res://assets/ui/level-select-complete.png" id="6_y30et"]
+[ext_resource type="Texture2D" uid="uid://dsafs2yohkryq" path="res://assets/ui/level-select-locked.png" id="7_fmgfv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tbutb"]
 font = ExtResource("4_ug8or")
@@ -55,3 +57,10 @@ vertical_alignment = 1
 [node name="Border" type="Sprite2D" parent="Sprite"]
 visible = false
 texture = ExtResource("3_hslak")
+
+[node name="Complete" type="Sprite2D" parent="Sprite"]
+visible = false
+texture = ExtResource("6_y30et")
+
+[node name="Locked" type="Sprite2D" parent="Sprite"]
+texture = ExtResource("7_fmgfv")

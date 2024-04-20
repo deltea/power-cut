@@ -8,7 +8,7 @@ class_name LevelSelect extends Room
 @export var stars_amount = 50
 @export var stars_box: Vector2 = Vector2(1920, 540)
 
-@onready var camera: Camera2D = $Camera
+@onready var camera: Camera = $Camera
 @onready var stars: Node2D = $Stars
 @onready var camera_dynamics_solver := Globals.create_dynamics_vector(camera_dynamics)
 
@@ -20,6 +20,9 @@ var dotted_line_scene = preload("res://scenes/dotted_line.tscn")
 var star_scene = preload("res://scenes/star.tscn")
 
 func _ready() -> void:
+	# Adding the circles
+	var level = RoomManager.load_level()
+	index = level
 	for i in range(len(level_resources)):
 		var level_select_circle = level_select_circle_scene.instantiate() as LevelSelectCircle
 		var x = i * select_circle_gap.x
@@ -28,6 +31,12 @@ func _ready() -> void:
 		level_select_circle.position = Vector2(x, y)
 		level_select_circle.level_resource = level_resources[i]
 		level_select_circle.num = i + 1
+
+		if i < level:
+			level_select_circle.completed = true
+		elif i > level:
+			level_select_circle.locked = true
+
 		level_select_circles.push_back(level_select_circle)
 
 		add_child(level_select_circle)
@@ -36,6 +45,7 @@ func _ready() -> void:
 			camera_target_position = level_select_circle.position
 			level_select_circle.selected = true
 
+	# Adding dotted lines
 	for x in range(len(level_select_circles)):
 		if x == len(level_resources) - 1: break
 
@@ -50,6 +60,7 @@ func _ready() -> void:
 		dotted_line.self_modulate = Color.RED
 		add_child(dotted_line)
 
+	# Adding the stars
 	for j in range(stars_amount):
 		var star = star_scene.instantiate() as Sprite2D
 		var x = randf_range(0, stars_box.x)
@@ -57,7 +68,14 @@ func _ready() -> void:
 		star.position = Vector2(x - 240, y)
 		stars.add_child(star)
 
-	color_palette = level_resources[0].color_palette
+	update_selection()
+
+func update_selection(value: int = 0):
+	level_select_circles[index].selected = false
+	index = clampi(index + value, 0, len(level_select_circles) - 1)
+	level_select_circles[index].selected = true
+	camera_target_position = level_select_circles[index].position
+	color_palette = level_resources[index].color_palette
 	ColorPalette.update_color_palette()
 
 func _process(_delta: float) -> void:
@@ -68,13 +86,10 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("left"): input -= 1
 	if Input.is_action_just_pressed("right"): input += 1
 
-	if input:
-		level_select_circles[index].selected = false
-		index = clampi(index + input, 0, len(level_select_circles) - 1)
-		level_select_circles[index].selected = true
-		camera_target_position = level_select_circles[index].position
-		color_palette = level_resources[index].color_palette
-		ColorPalette.update_color_palette()
+	if input: update_selection(input)
 
 	if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("jump"):
-		RoomManager.play_level(level_resources[index])
+		if level_select_circles[index].locked:
+			camera.shake(0.1, 2)
+		else:
+			RoomManager.play_level(level_resources[index])

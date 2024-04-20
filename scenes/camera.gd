@@ -28,7 +28,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	zoom = lerp(zoom, target_zoom, zoom_speed * delta)
 
-	if Globals.player:
+	if Globals.player != null:
 		var player_x_tilt = 0 - Globals.player.position.x * player_x_strength
 		rotation_degrees = lerp(rotation_degrees, 0.0 + player_x_tilt, rotation_speed * delta)
 

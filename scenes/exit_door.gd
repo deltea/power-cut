@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and touching and (control.enabled if control else true):
-		RoomManager.change_room("level_select")
+		RoomManager.finish_level()
 
 func _on_activate(value: bool):
 	sprite.scale(Vector2(1.2, 1.2))

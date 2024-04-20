@@ -46,10 +46,15 @@ func change_room(room_name: String):
 func play_level(level: LevelResource):
 	if transitioning: return
 
-	change_room(level.resource_path.get_file().trim_suffix(".tres"))
+	change_room(get_resource_name(level))
 	current_room.color_palette = level.color_palette
 	await Clock.wait(animation_duration / 2)
 	ColorPalette.update_color_palette()
+
+func finish_level():
+	save_level(get_resource_name(current_room.level_resource).replace("level_", ""))
+
+	RoomManager.change_room("level_select")
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("esc") and not transitioning:
@@ -60,4 +65,17 @@ func _process(_delta: float) -> void:
 
 	if Input.is_action_just_pressed("restart") and current_room is LevelRoom and not transitioning:
 		var current_level = (current_room as LevelRoom)
-		change_room(current_level.level_resource.resource_path.get_file().trim_suffix(".tres"))
+		change_room(get_resource_name(current_level.level_resource))
+
+func save_level(data: String):
+	var file = FileAccess.open("user://data.json", FileAccess.WRITE)
+	file.store_string(data)
+	file = null
+
+func load_level():
+	var file = FileAccess.open("user://data.json", FileAccess.READ)
+	var content = file.get_as_text()
+	return content.to_int()
+
+func get_resource_name(resource: Resource):
+	return resource.resource_path.get_file().trim_suffix(".tres")
