@@ -24,7 +24,7 @@ func _ready() -> void:
 
 func _on_activate(value: bool):
 	open = value if inverted else not value
-	collider.disabled = value if inverted else not value
+	collider.disabled = not value if inverted else value
 
 func _process(_delta: float) -> void:
 	sprite.scale.y = scale_dynamics_solver.update(1 if open else 0)
