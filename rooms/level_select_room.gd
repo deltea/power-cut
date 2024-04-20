@@ -70,3 +70,6 @@ func _process(_delta: float) -> void:
 		index = clampi(index + input, 0, len(level_select_circles) - 1)
 		level_select_circles[index].selected = true
 		camera_target_position = level_select_circles[index].position
+
+	if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("jump"):
+		RoomManager.change_room("level_" + str(index + 1))

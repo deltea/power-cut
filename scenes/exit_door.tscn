@@ -17,6 +17,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.33596, 0.0, 0, 0]
 point_count = 2
 
 [node name="ExitDoor" type="Area2D"]
+collision_mask = 3
 script = ExtResource("1_iqvna")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
@@ -42,3 +43,6 @@ angle_max = 360.0
 angle_curve = SubResource("Curve_882wt")
 scale_amount_max = 2.0
 scale_amount_curve = SubResource("Curve_n1u8a")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

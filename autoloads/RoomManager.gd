@@ -1,5 +1,8 @@
 extends Node
 
+@onready var level_select_room: PackedScene = preload("res://rooms/level_select_room.tscn")
+@onready var level_1_room: PackedScene = preload("res://rooms/levels/level_1.tscn")
+
 var current_room: Room
 
 signal room_changed(room_name: String)

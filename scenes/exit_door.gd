@@ -1,4 +1,4 @@
-class_name ExitDoor extends Area2D
+class_name ExitDoor extends ProximityArea
 
 @export var control: InputControl
 @export var inverted = false
@@ -12,6 +12,10 @@ func _ready() -> void:
 		_on_activate(control.enabled)
 	else:
 		_on_activate(true)
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("interact") and player_touching and control.enabled:
+		RoomManager.change_room("level_select")
 
 func _on_activate(value: bool):
 	sprite.scale(Vector2(1.2, 1.2))
