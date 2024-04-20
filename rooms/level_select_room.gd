@@ -47,6 +47,7 @@ func _ready() -> void:
 		var offset = normal * dotted_line_padding
 		dotted_line.add_point(circle.position - offset, 0)
 		dotted_line.add_point(next_circle.position + offset, 1)
+		dotted_line.self_modulate = Color.RED
 		add_child(dotted_line)
 
 	for j in range(stars_amount):

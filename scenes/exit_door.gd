@@ -1,7 +1,6 @@
 class_name ExitDoor extends ProximityArea
 
 @export var control: InputControl
-@export var inverted = false
 
 @onready var sprite: Sprite = $Sprite
 @onready var particles: CPUParticles2D = $CPUParticles

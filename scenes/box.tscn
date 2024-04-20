@@ -10,7 +10,7 @@ size = Vector2(24, 24)
 
 [node name="Box" type="RigidBody2D"]
 z_index = 1
-mass = 5.0
+mass = 4.0
 physics_material_override = SubResource("PhysicsMaterial_g5rry")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
