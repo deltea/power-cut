@@ -22,7 +22,7 @@ var star_scene = preload("res://scenes/star.tscn")
 func _ready() -> void:
 	# Adding the circles
 	var level = RoomManager.load_level()
-	index = level
+	index = level - 1
 	for i in range(len(level_resources)):
 		var level_select_circle = level_select_circle_scene.instantiate() as LevelSelectCircle
 		var x = i * select_circle_gap.x

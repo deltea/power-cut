@@ -74,8 +74,10 @@ func save_level(data: String):
 
 func load_level():
 	var file = FileAccess.open("user://data.json", FileAccess.READ)
-	var content = file.get_as_text()
-	return content.to_int()
+	if file:
+		return file.get_as_text().to_int()
+	else:
+		return 0
 
 func get_resource_name(resource: Resource):
 	return resource.resource_path.get_file().trim_suffix(".tres")
