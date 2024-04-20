@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dp6qb8deljlm1"]
+[gd_scene load_steps=7 format=3 uid="uid://dp6qb8deljlm1"]
 
 [ext_resource type="PackedScene" uid="uid://hlp28anwneby" path="res://rooms/level_room.tscn" id="1_g8gj7"]
 [ext_resource type="PackedScene" uid="uid://kvi2j4wq3m45" path="res://scenes/input-control/lever.tscn" id="2_golpj"]
+[ext_resource type="PackedScene" uid="uid://ixj7oladamx7" path="res://scenes/power_line.tscn" id="3_dgyox"]
 [ext_resource type="PackedScene" uid="uid://c0qxefqb235va" path="res://scenes/door.tscn" id="3_j72kk"]
 [ext_resource type="PackedScene" uid="uid://bxr2sbhd375tc" path="res://scenes/button.tscn" id="4_aw0ni"]
 [ext_resource type="PackedScene" uid="uid://gnqhse06in6m" path="res://scenes/box.tscn" id="5_cdas7"]
@@ -18,8 +19,12 @@ position = Vector2(-155, 91)
 position = Vector2(155, -50)
 control = NodePath("../Components/Lever")
 
-[node name="Lever" parent="Components" index="0" instance=ExtResource("2_golpj")]
+[node name="Lever" parent="Components" index="0" node_paths=PackedStringArray("power_line") instance=ExtResource("2_golpj")]
 position = Vector2(155, 96)
+power_line = NodePath("PowerLine")
+
+[node name="PowerLine" parent="Components/Lever" index="2" instance=ExtResource("3_dgyox")]
+points = PackedVector2Array(0, -124, 0, -110, 55, -110, 55, 19, 0, 19, 0, 4)
 
 [node name="Door" parent="Components" index="1" node_paths=PackedStringArray("control") instance=ExtResource("3_j72kk")]
 position = Vector2(68, 44)
@@ -30,5 +35,9 @@ control = NodePath("../Button")
 [node name="Box" parent="Components" index="2" instance=ExtResource("5_cdas7")]
 position = Vector2(-34, 79)
 
-[node name="Button" parent="Components" index="3" instance=ExtResource("4_aw0ni")]
+[node name="Button" parent="Components" index="3" node_paths=PackedStringArray("power_line") instance=ExtResource("4_aw0ni")]
 position = Vector2(-84, 96)
+power_line = NodePath("PowerLine")
+
+[node name="PowerLine" parent="Components/Button" index="2" instance=ExtResource("3_dgyox")]
+points = PackedVector2Array(152, 4, 152, 16, 0, 16, 0, 4)
