@@ -12,6 +12,7 @@ size = Vector2(24, 24)
 z_index = 1
 mass = 4.0
 physics_material_override = SubResource("PhysicsMaterial_g5rry")
+can_sleep = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_2ijxb")

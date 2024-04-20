@@ -11,3 +11,6 @@ func _process(_delta: float) -> void:
 		activate.emit(enabled)
 		sprite.texture = enabled_texture if enabled else disabled_texture
 		Globals.camera.shake(0.05, 1)
+
+	if get_parent() is RigidBody2D:
+		sprite.target_rotation_degrees = get_parent().global_rotation_degrees

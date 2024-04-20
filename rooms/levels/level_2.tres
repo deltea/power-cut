@@ -1,9 +1,7 @@
-[gd_resource type="Resource" script_class="LevelResource" load_steps=3 format=3 uid="uid://bydkfhqtqtrfw"]
+[gd_resource type="Resource" script_class="LevelResource" load_steps=2 format=3 uid="uid://bydkfhqtqtrfw"]
 
-[ext_resource type="PackedScene" uid="uid://by4ry8e20r1l6" path="res://rooms/levels/level_1.tscn" id="1_ijpcl"]
 [ext_resource type="Script" path="res://scripts/level_resource.gd" id="2_0q6im"]
 
 [resource]
 script = ExtResource("2_0q6im")
-name = "Outside the Box"
-scene = ExtResource("1_ijpcl")
+name = "Heights"

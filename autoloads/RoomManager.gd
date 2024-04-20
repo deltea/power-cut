@@ -6,6 +6,10 @@ extends CanvasLayer
 
 var level_select_room: PackedScene = preload("res://rooms/level_select_room.tscn")
 var level_1_room: PackedScene = preload("res://rooms/levels/level_1.tscn")
+var level_2_room: PackedScene = preload("res://rooms/levels/level_2.tscn")
+var level_3_room: PackedScene = preload("res://rooms/levels/level_3.tscn")
+var level_4_room: PackedScene = preload("res://rooms/levels/level_4.tscn")
+var level_5_room: PackedScene = preload("res://rooms/levels/level_5.tscn")
 
 var current_room: Room
 
