@@ -34,3 +34,9 @@ func change_room(room_name: String):
 
 	get_tree().change_scene_to_packed(scene)
 	room_changed.emit(room_name)
+
+func play_level(level: LevelResource):
+	change_room(level.resource_path.get_file().trim_suffix(".tres"))
+	current_room.color_palette = level.color_palette
+	await Clock.wait(animation_duration / 2)
+	ColorPalette.update_color_palette()

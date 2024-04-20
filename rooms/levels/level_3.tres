@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="LevelResource" load_steps=3 format=3 uid="uid://d2qyw1biptt56"]
 
-[ext_resource type="PackedScene" uid="uid://by4ry8e20r1l6" path="res://rooms/levels/level_1.tscn" id="1_brqub"]
+[ext_resource type="Resource" path="res://color-palettes/bumblebit.tres" id="1_3e76b"]
 [ext_resource type="Script" path="res://scripts/level_resource.gd" id="2_bjpkm"]
 
 [resource]
 script = ExtResource("2_bjpkm")
 name = "Switcheroo"
-scene = ExtResource("1_brqub")
+color_palette = ExtResource("1_3e76b")

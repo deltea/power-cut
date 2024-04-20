@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="LevelResource" load_steps=2 format=3 uid="uid://br07ahu5a0jj5"]
+[gd_resource type="Resource" script_class="LevelResource" load_steps=3 format=3 uid="uid://br07ahu5a0jj5"]
 
+[ext_resource type="Resource" path="res://color-palettes/bittersweet.tres" id="1_aj5tf"]
 [ext_resource type="Script" path="res://scripts/level_resource.gd" id="2_k82f2"]
 
 [resource]
 script = ExtResource("2_k82f2")
 name = "Ladders"
+color_palette = ExtResource("1_aj5tf")
