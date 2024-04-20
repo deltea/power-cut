@@ -50,7 +50,6 @@ func _ready() -> void:
 		add_child(dotted_line)
 
 	for j in range(stars_amount):
-		print(j)
 		var star = star_scene.instantiate() as Sprite2D
 		var x = randf_range(0, stars_box.x)
 		var y = randf_range(-stars_box.y / 2, stars_box.y / 2)

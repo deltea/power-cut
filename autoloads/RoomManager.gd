@@ -1,7 +1,11 @@
-extends Node
+extends CanvasLayer
 
-@onready var level_select_room: PackedScene = preload("res://rooms/level_select_room.tscn")
-@onready var level_1_room: PackedScene = preload("res://rooms/levels/level_1.tscn")
+@export var animation_duration = 2.0
+
+@onready var mask: Sprite2D = $BackBufferCopy/Mask
+
+var level_select_room: PackedScene = preload("res://rooms/level_select_room.tscn")
+var level_1_room: PackedScene = preload("res://rooms/levels/level_1.tscn")
 
 var current_room: Room
 
@@ -12,6 +16,17 @@ func change_room(room_name: String):
 	if not scene:
 		printerr(room_name + " is not a valid room")
 		return
+
+	mask.scale = Vector2(2, 2)
+	mask.rotation = 0
+
+	var tween = get_tree().create_tween().set_parallel().set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(mask, "scale", Vector2(0, 0), animation_duration / 2)
+	tween.tween_property(mask, "rotation", PI*2, animation_duration / 2)
+	tween.chain().tween_property(mask, "scale", Vector2(2, 2), animation_duration / 2)
+	tween.tween_property(mask, "rotation", 0, animation_duration / 2)
+
+	await Clock.wait(animation_duration / 2)
 
 	get_tree().change_scene_to_packed(scene)
 	room_changed.emit(room_name)
