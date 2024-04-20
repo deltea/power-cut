@@ -17,7 +17,11 @@ position = Vector2(0, 91)
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1
+texture_repeat = 2
+position = Vector2(-41, 0)
 texture = ExtResource("6_h05qf")
+region_enabled = true
+region_rect = Rect2(0, 0, 960, 270)
 
 [node name="ExitDoor" parent="." instance=ExtResource("6_00enj")]
 position = Vector2(0, 78)

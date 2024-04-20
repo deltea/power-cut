@@ -20,9 +20,10 @@ var dotted_line_scene = preload("res://scenes/dotted_line.tscn")
 var star_scene = preload("res://scenes/star.tscn")
 
 func _ready() -> void:
-	# Adding the circles
 	var level = RoomManager.load_level()
-	index = level - 1
+	index = level
+
+	# Adding the circles
 	for i in range(len(level_resources)):
 		var level_select_circle = level_select_circle_scene.instantiate() as LevelSelectCircle
 		var x = i * select_circle_gap.x
@@ -71,7 +72,8 @@ func _ready() -> void:
 	update_selection()
 
 func update_selection(value: int = 0):
-	level_select_circles[index].selected = false
+	var prev_index = clampi(index, 0, len(level_select_circles) - 1)
+	level_select_circles[prev_index].selected = false
 	index = clampi(index + value, 0, len(level_select_circles) - 1)
 	level_select_circles[index].selected = true
 	camera_target_position = level_select_circles[index].position

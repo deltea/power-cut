@@ -25,6 +25,7 @@ limit_x = 10000
 limit_y = 10000
 
 [node name="Camera" parent="." instance=ExtResource("9_qs8y1")]
+position = Vector2(-2, 0)
 position_smoothing_enabled = false
 
 [node name="Stars" type="Node2D" parent="."]
