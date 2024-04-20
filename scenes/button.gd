@@ -5,7 +5,7 @@ class_name ButtonInput extends InputControl
 
 func _process(_delta: float) -> void:
 	var enabled_prev = enabled
-	enabled = player_touching
+	enabled = len(touching) > 0
 
 	if enabled != enabled_prev:
 		activate.emit(enabled)

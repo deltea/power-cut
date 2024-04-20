@@ -8,7 +8,7 @@ func _ready() -> void:
 	set_enabled(default_enabled)
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("interact") and player_touching:
+	if Input.is_action_just_pressed("interact") and touching:
 		set_enabled(not enabled)
 		activate.emit(enabled)
 
