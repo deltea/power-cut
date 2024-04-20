@@ -10,6 +10,7 @@ class_name Player extends CharacterBody2D
 @export var deceleration = 30.0
 @export var coyote_time = 0.15
 @export var buffer_time = 0.15
+@export var push_force = 200
 
 @export_category("Animation")
 @export var run_tilt_angle = 20.0
@@ -63,3 +64,8 @@ func _physics_process(delta: float) -> void:
 		jumped = false
 	elif was_on_floor and not is_on_floor() and not jumped:
 		coyote_timer = 0.0
+
+	if get_slide_collision_count() > 0:
+		var collision = get_slide_collision(0)
+		if collision.get_collider() is RigidBody2D:
+			(collision.get_collider() as RigidBody2D).apply_impulse(-collision.get_normal() * push_force)

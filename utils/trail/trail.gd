@@ -5,9 +5,6 @@ class_name Trail extends Line2D
 
 var queue: Array[Vector2]
 
-func _ready() -> void:
-	default_color = ColorPalette.colors.light
-
 func _process(_delta: float) -> void:
 	if not emitting: return
 

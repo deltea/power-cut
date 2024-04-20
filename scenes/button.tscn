@@ -12,6 +12,7 @@ size = Vector2(28, 5)
 script = ExtResource("2_bokxo")
 enabled_texture = ExtResource("3_ianww")
 disabled_texture = ExtResource("2_72evl")
+rigidbody_touch = true
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource("2_72evl")

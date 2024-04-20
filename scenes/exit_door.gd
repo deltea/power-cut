@@ -14,6 +14,7 @@ func _ready() -> void:
 		_on_activate(true)
 
 func _on_activate(value: bool):
+	sprite.scale(Vector2(1.2, 1.2))
 	sprite.self_modulate = Color.RED if value else Color.WHITE
 	particles.color = Color.RED if value else Color.WHITE
-	particles.emitting = value
+	particles.visible = value

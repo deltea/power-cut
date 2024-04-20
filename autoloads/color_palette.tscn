@@ -16,7 +16,7 @@ shader_parameter/new_primary = Color(1, 0, 0, 1)
 shader_parameter/new_secondary = Color(0, 0, 1, 1)
 
 [node name="ColorPalette" type="CanvasLayer"]
-layer = 100
+layer = 128
 script = ExtResource("1_1riih")
 
 [node name="Overlay" type="TextureRect" parent="."]

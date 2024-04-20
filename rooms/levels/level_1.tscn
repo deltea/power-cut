@@ -1,5 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://by4ry8e20r1l6"]
+[gd_scene load_steps=4 format=3 uid="uid://by4ry8e20r1l6"]
 
 [ext_resource type="PackedScene" uid="uid://hlp28anwneby" path="res://rooms/level_room.tscn" id="1_ybgcj"]
+[ext_resource type="PackedScene" uid="uid://gnqhse06in6m" path="res://scenes/box.tscn" id="2_btcsn"]
+[ext_resource type="PackedScene" uid="uid://bxr2sbhd375tc" path="res://scenes/button.tscn" id="3_xn4eu"]
 
 [node name="Level1" instance=ExtResource("1_ybgcj")]
+
+[node name="ExitDoor" parent="." index="3" node_paths=PackedStringArray("control")]
+control = NodePath("../Components/Button")
+
+[node name="Box" parent="Components" index="0" instance=ExtResource("2_btcsn")]
+position = Vector2(-85, 46)
+
+[node name="Button" parent="Components" index="1" instance=ExtResource("3_xn4eu")]
+position = Vector2(97, 96)

@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://234kf4u6ra8h"]
+[gd_scene load_steps=9 format=3 uid="uid://234kf4u6ra8h"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_fwgjm"]
 [ext_resource type="PackedScene" uid="uid://8c6n3jqhpthv" path="res://utils/sprite-plus/sprite.tscn" id="2_14t4h"]
 [ext_resource type="Texture2D" uid="uid://c77j0svlymanv" path="res://assets/player.png" id="3_t6rku"]
 [ext_resource type="Script" path="res://utils/dynamics/dynamics_resource.gd" id="4_4caxp"]
 [ext_resource type="PackedScene" uid="uid://nnqr388phn4e" path="res://scenes/camera.tscn" id="5_46osi"]
-[ext_resource type="PackedScene" uid="uid://d0vw7prgwjdul" path="res://utils/trail/trail.tscn" id="6_e4jsm"]
 
 [sub_resource type="Resource" id="Resource_8wgfc"]
 script = ExtResource("4_4caxp")
@@ -39,6 +38,3 @@ rotation_dynamics = SubResource("Resource_ndpfh")
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_hubiu")
-
-[node name="Trail" parent="." instance=ExtResource("6_e4jsm")]
-position = Vector2(0, -7)

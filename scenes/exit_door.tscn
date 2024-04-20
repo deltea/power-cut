@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpgqulmxaxper"]
+[gd_scene load_steps=8 format=3 uid="uid://cpgqulmxaxper"]
 
 [ext_resource type="Script" path="res://scenes/exit_door.gd" id="1_iqvna"]
 [ext_resource type="PackedScene" uid="uid://8c6n3jqhpthv" path="res://utils/sprite-plus/sprite.tscn" id="2_k2re2"]
@@ -7,6 +7,10 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_exmc5"]
 size = Vector2(32, 39)
+
+[sub_resource type="Curve" id="Curve_882wt"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [sub_resource type="Curve" id="Curve_n1u8a"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.33596, 0.0, 0, 0]
@@ -33,5 +37,8 @@ spread = 180.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 20.0
 initial_velocity_max = 20.0
+angle_min = -360.0
+angle_max = 360.0
+angle_curve = SubResource("Curve_882wt")
 scale_amount_max = 2.0
 scale_amount_curve = SubResource("Curve_n1u8a")
