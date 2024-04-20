@@ -25,13 +25,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -43.5
+offset_left = -51.0
 offset_top = -68.0
-offset_right = 11.5
+offset_right = 19.0
 offset_bottom = -54.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "The Wheel"
+text = "Start"
 label_settings = SubResource("LabelSettings_tbutb")
 horizontal_alignment = 1
 
