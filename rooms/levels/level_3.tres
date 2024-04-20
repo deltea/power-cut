@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="LevelResource" load_steps=3 format=3 uid="uid://d2qyw1biptt56"]
 
-[ext_resource type="Resource" path="res://color-palettes/bumblebit.tres" id="1_3e76b"]
+[ext_resource type="Resource" uid="uid://y0bk14jkld4b" path="res://color-palettes/stone.tres" id="1_2rgti"]
 [ext_resource type="Script" path="res://scripts/level_resource.gd" id="2_bjpkm"]
 
 [resource]
 script = ExtResource("2_bjpkm")
 name = "Switcheroo"
-color_palette = ExtResource("1_3e76b")
+color_palette = ExtResource("1_2rgti")

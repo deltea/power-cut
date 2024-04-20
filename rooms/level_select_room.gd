@@ -57,6 +57,9 @@ func _ready() -> void:
 		star.position = Vector2(x - 240, y)
 		stars.add_child(star)
 
+	color_palette = level_resources[0].color_palette
+	ColorPalette.update_color_palette()
+
 func _process(_delta: float) -> void:
 	camera.position = camera_dynamics_solver.update(camera_target_position)
 	stars.position = -camera.position * stars_parallax

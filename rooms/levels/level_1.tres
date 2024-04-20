@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="LevelResource" load_steps=3 format=3 uid="uid://bk6a10vhvtxlo"]
 
-[ext_resource type="Resource" path="res://color-palettes/bumblebit.tres" id="1_2hnvt"]
+[ext_resource type="Resource" uid="uid://dcp07b8xi7lwc" path="res://color-palettes/crimson.tres" id="1_05d6m"]
 [ext_resource type="Script" path="res://scripts/level_resource.gd" id="1_7dnea"]
 
 [resource]
 script = ExtResource("1_7dnea")
 name = "Start"
-color_palette = ExtResource("1_2hnvt")
+color_palette = ExtResource("1_05d6m")
