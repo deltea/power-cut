@@ -52,7 +52,9 @@ func play_level(level: LevelResource):
 	ColorPalette.update_color_palette()
 
 func finish_level():
-	save_level(get_resource_name(current_room.level_resource).replace("level_", ""))
+	var level = get_resource_name(current_room.level_resource).replace("level_", "").to_int()
+	if level > load_level():
+		save_level(level)
 
 	RoomManager.change_room("level_select")
 
@@ -67,9 +69,9 @@ func _process(_delta: float) -> void:
 		var current_level = (current_room as LevelRoom)
 		change_room(get_resource_name(current_level.level_resource))
 
-func save_level(data: String):
+func save_level(data: int):
 	var file = FileAccess.open("user://data.json", FileAccess.WRITE)
-	file.store_string(data)
+	file.store_string(str(data))
 	file = null
 
 func load_level():
