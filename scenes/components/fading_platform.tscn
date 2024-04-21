@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bqmn62p67sf7m"]
 
-[ext_resource type="Script" path="res://scenes/fading_platform.gd" id="1_f42jq"]
+[ext_resource type="Script" path="res://scenes/components/fading_platform.gd" id="1_f42jq"]
 [ext_resource type="PackedScene" uid="uid://8c6n3jqhpthv" path="res://utils/sprite-plus/sprite.tscn" id="2_dixb1"]
 [ext_resource type="Texture2D" uid="uid://cgu60mjxc301h" path="res://assets/fading-platform.png" id="3_5a68k"]
 [ext_resource type="Texture2D" uid="uid://bhj243y1q2awb" path="res://assets/fading-platform-outline.png" id="3_jxg2h"]

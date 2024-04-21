@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://gnqhse06in6m"]
 
-[ext_resource type="Texture2D" uid="uid://dha6istn3v17m" path="res://assets/box.png" id="1_2ijxb"]
-[ext_resource type="Script" path="res://scenes/box.gd" id="1_dwtfc"]
+[ext_resource type="Script" path="res://scenes/components/box.gd" id="1_8i14u"]
+[ext_resource type="Texture2D" uid="uid://dha6istn3v17m" path="res://assets/box.png" id="2_24ccp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u6wdw"]
 friction = 0.0
@@ -18,10 +18,10 @@ z_index = 1
 physics_material_override = SubResource("PhysicsMaterial_u6wdw")
 can_sleep = false
 lock_rotation = true
-script = ExtResource("1_dwtfc")
+script = ExtResource("1_8i14u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_2ijxb")
+texture = ExtResource("2_24ccp")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_araka")

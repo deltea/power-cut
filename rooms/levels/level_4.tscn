@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://cthie4ti1kafd"]
 
 [ext_resource type="PackedScene" uid="uid://hlp28anwneby" path="res://rooms/level_room.tscn" id="1_rovur"]
-[ext_resource type="PackedScene" uid="uid://bxr2sbhd375tc" path="res://scenes/button.tscn" id="2_u6hx0"]
 [ext_resource type="Resource" uid="uid://br07ahu5a0jj5" path="res://rooms/levels/level_4.tres" id="2_x5erx"]
-[ext_resource type="PackedScene" uid="uid://c0qxefqb235va" path="res://scenes/door.tscn" id="3_7yllr"]
+[ext_resource type="PackedScene" uid="uid://bxr2sbhd375tc" path="res://scenes/input-control/button.tscn" id="3_lo4y8"]
+[ext_resource type="PackedScene" uid="uid://c0qxefqb235va" path="res://scenes/components/door.tscn" id="4_e62g4"]
 [ext_resource type="PackedScene" uid="uid://ixj7oladamx7" path="res://scenes/power_line.tscn" id="4_h4sb4"]
-[ext_resource type="PackedScene" uid="uid://gnqhse06in6m" path="res://scenes/box.tscn" id="4_wen1y"]
+[ext_resource type="PackedScene" uid="uid://gnqhse06in6m" path="res://scenes/components/box.tscn" id="6_bx5mr"]
 
 [node name="Level4" instance=ExtResource("1_rovur")]
 level_resource = ExtResource("2_x5erx")
@@ -24,16 +24,16 @@ position = Vector2(0, 43)
 position = Vector2(136, 142)
 control = NodePath("../Components/Button2")
 
-[node name="Button" parent="Components" index="0" instance=ExtResource("2_u6hx0")]
+[node name="Button" parent="Components" index="0" instance=ExtResource("3_lo4y8")]
 position = Vector2(15, 0)
 
-[node name="Door" parent="Components" index="1" node_paths=PackedStringArray("control") instance=ExtResource("3_7yllr")]
+[node name="Door" parent="Components" index="1" node_paths=PackedStringArray("control") instance=ExtResource("4_e62g4")]
 position = Vector2(-88, -78)
 rotation = -1.57079
 scale = Vector2(1, 3.5)
 control = NodePath("../Button")
 
-[node name="Door2" parent="Components" index="2" node_paths=PackedStringArray("control") instance=ExtResource("3_7yllr")]
+[node name="Door2" parent="Components" index="2" node_paths=PackedStringArray("control") instance=ExtResource("4_e62g4")]
 position = Vector2(-88, -42)
 rotation = -1.57079
 scale = Vector2(1, 3.5)
@@ -41,13 +41,13 @@ direction = 1
 control = NodePath("../Button")
 inverted = true
 
-[node name="Door3" parent="Components" index="3" node_paths=PackedStringArray("control") instance=ExtResource("3_7yllr")]
+[node name="Door3" parent="Components" index="3" node_paths=PackedStringArray("control") instance=ExtResource("4_e62g4")]
 position = Vector2(-88, -6)
 rotation = -1.57079
 scale = Vector2(1, 3.5)
 control = NodePath("../Button")
 
-[node name="Door4" parent="Components" index="4" node_paths=PackedStringArray("control") instance=ExtResource("3_7yllr")]
+[node name="Door4" parent="Components" index="4" node_paths=PackedStringArray("control") instance=ExtResource("4_e62g4")]
 position = Vector2(-88, 30)
 rotation = -1.57079
 scale = Vector2(1, 3.5)
@@ -55,13 +55,13 @@ direction = 1
 control = NodePath("../Button")
 inverted = true
 
-[node name="Door5" parent="Components" index="5" node_paths=PackedStringArray("control") instance=ExtResource("3_7yllr")]
+[node name="Door5" parent="Components" index="5" node_paths=PackedStringArray("control") instance=ExtResource("4_e62g4")]
 position = Vector2(-88, 66)
 rotation = -1.57079
 scale = Vector2(1, 3.5)
 control = NodePath("../Button")
 
-[node name="Door6" parent="Components" index="6" node_paths=PackedStringArray("control") instance=ExtResource("3_7yllr")]
+[node name="Door6" parent="Components" index="6" node_paths=PackedStringArray("control") instance=ExtResource("4_e62g4")]
 position = Vector2(-88, 100)
 rotation = -1.57079
 scale = Vector2(1, 3.5)
@@ -69,12 +69,12 @@ direction = 1
 control = NodePath("../Button")
 inverted = true
 
-[node name="Button2" parent="Components" index="7" node_paths=PackedStringArray("power_line") instance=ExtResource("2_u6hx0")]
+[node name="Button2" parent="Components" index="7" node_paths=PackedStringArray("power_line") instance=ExtResource("3_lo4y8")]
 position = Vector2(-88, 160)
 power_line = NodePath("PowerLine")
 
 [node name="PowerLine" parent="Components/Button2" index="2" instance=ExtResource("4_h4sb4")]
 points = PackedVector2Array(224, 4, 224, 15, 0, 15, 0, 4)
 
-[node name="Box" parent="Components" index="8" instance=ExtResource("4_wen1y")]
+[node name="Box" parent="Components" index="8" instance=ExtResource("6_bx5mr")]
 position = Vector2(-88, -105)

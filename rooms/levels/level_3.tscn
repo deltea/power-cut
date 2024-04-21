@@ -2,10 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://hlp28anwneby" path="res://rooms/level_room.tscn" id="1_qhqtj"]
 [ext_resource type="Resource" uid="uid://d2qyw1biptt56" path="res://rooms/levels/level_3.tres" id="2_blj25"]
-[ext_resource type="PackedScene" uid="uid://bxr2sbhd375tc" path="res://scenes/button.tscn" id="2_f378y"]
 [ext_resource type="PackedScene" uid="uid://ixj7oladamx7" path="res://scenes/power_line.tscn" id="3_huxmq"]
-[ext_resource type="PackedScene" uid="uid://c0qxefqb235va" path="res://scenes/door.tscn" id="3_pxuwh"]
-[ext_resource type="PackedScene" uid="uid://gnqhse06in6m" path="res://scenes/box.tscn" id="5_2b27q"]
+[ext_resource type="PackedScene" uid="uid://bxr2sbhd375tc" path="res://scenes/input-control/button.tscn" id="3_jurrj"]
+[ext_resource type="PackedScene" uid="uid://c0qxefqb235va" path="res://scenes/components/door.tscn" id="5_taguu"]
+[ext_resource type="PackedScene" uid="uid://gnqhse06in6m" path="res://scenes/components/box.tscn" id="6_tnfmp"]
 
 [node name="Level3" instance=ExtResource("1_qhqtj")]
 level_resource = ExtResource("2_blj25")
@@ -20,23 +20,23 @@ position = Vector2(-48, 51)
 position = Vector2(-122, -50)
 control = NodePath("../Components/Button2")
 
-[node name="Button" parent="Components" index="0" node_paths=PackedStringArray("power_line") instance=ExtResource("2_f378y")]
+[node name="Button" parent="Components" index="0" node_paths=PackedStringArray("power_line") instance=ExtResource("3_jurrj")]
 position = Vector2(-115, 64)
 power_line = NodePath("PowerLine")
 
 [node name="PowerLine" parent="Components/Button" index="2" instance=ExtResource("3_huxmq")]
 points = PackedVector2Array(15, -64, -48, -64, -48, 22, 0, 22, 0, 4)
 
-[node name="Door" parent="Components" index="1" node_paths=PackedStringArray("control") instance=ExtResource("3_pxuwh")]
+[node name="Door" parent="Components" index="1" node_paths=PackedStringArray("control") instance=ExtResource("5_taguu")]
 position = Vector2(-48, 0)
 rotation = -1.57079
 scale = Vector2(1, 3)
 control = NodePath("../Button")
 
-[node name="Box" parent="Components" index="2" instance=ExtResource("5_2b27q")]
+[node name="Box" parent="Components" index="2" instance=ExtResource("6_tnfmp")]
 position = Vector2(-48, -39)
 
-[node name="Button2" parent="Components" index="3" node_paths=PackedStringArray("power_line") instance=ExtResource("2_f378y")]
+[node name="Button2" parent="Components" index="3" node_paths=PackedStringArray("power_line") instance=ExtResource("3_jurrj")]
 position = Vector2(17, 64)
 power_line = NodePath("PowerLine")
 

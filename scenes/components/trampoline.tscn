@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b68tashra0lpg"]
 
-[ext_resource type="Script" path="res://scenes/trampoline.gd" id="1_knetl"]
+[ext_resource type="Script" path="res://scenes/components/trampoline.gd" id="1_knetl"]
 [ext_resource type="PackedScene" uid="uid://8c6n3jqhpthv" path="res://utils/sprite-plus/sprite.tscn" id="2_u4u1b"]
 [ext_resource type="Texture2D" uid="uid://0fve0hsbwi5b" path="res://assets/trampoline.png" id="3_3jxhh"]
 

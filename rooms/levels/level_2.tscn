@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://6kqdxck7x8eb"]
 
 [ext_resource type="PackedScene" uid="uid://hlp28anwneby" path="res://rooms/level_room.tscn" id="1_huca4"]
-[ext_resource type="PackedScene" uid="uid://gnqhse06in6m" path="res://scenes/box.tscn" id="2_glvc3"]
+[ext_resource type="PackedScene" uid="uid://gnqhse06in6m" path="res://scenes/components/box.tscn" id="2_glvc3"]
 [ext_resource type="Resource" uid="uid://bydkfhqtqtrfw" path="res://rooms/levels/level_2.tres" id="2_vguye"]
-[ext_resource type="PackedScene" uid="uid://bxr2sbhd375tc" path="res://scenes/button.tscn" id="3_dde5j"]
+[ext_resource type="PackedScene" uid="uid://bxr2sbhd375tc" path="res://scenes/input-control/button.tscn" id="3_dde5j"]
 [ext_resource type="PackedScene" uid="uid://ixj7oladamx7" path="res://scenes/power_line.tscn" id="4_w1f4c"]
 
 [node name="Level2" instance=ExtResource("1_huca4")]

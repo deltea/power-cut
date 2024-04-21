@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c0qxefqb235va"]
 
 [ext_resource type="Texture2D" uid="uid://bviavg5hanq5j" path="res://assets/door.png" id="1_g23u6"]
-[ext_resource type="Script" path="res://scenes/door.gd" id="1_geucs"]
+[ext_resource type="Script" path="res://scenes/components/door.gd" id="1_geucs"]
 [ext_resource type="Script" path="res://utils/dynamics/dynamics_resource.gd" id="2_o42e5"]
 
 [sub_resource type="Resource" id="Resource_mvic3"]

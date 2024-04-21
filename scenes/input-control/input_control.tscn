@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dcdr6lakd0s6j"]
 
-[ext_resource type="Script" path="res://scenes/input_control.gd" id="1_4thvu"]
+[ext_resource type="Script" path="res://scenes/input-control/input_control.gd" id="1_4thvu"]
 [ext_resource type="PackedScene" uid="uid://8c6n3jqhpthv" path="res://utils/sprite-plus/sprite.tscn" id="1_mb485"]
 [ext_resource type="Script" path="res://utils/dynamics/dynamics_resource.gd" id="3_kj2dw"]
 
