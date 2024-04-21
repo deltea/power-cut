@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdc8i3xfqncxq"]
+[gd_scene load_steps=3 format=3 uid="uid://bdc8i3xfqncxq"]
 
 [ext_resource type="PackedScene" uid="uid://hlp28anwneby" path="res://rooms/level_room.tscn" id="1_5mgxl"]
 [ext_resource type="Resource" uid="uid://dg0yacyupake2" path="res://rooms/levels/level_6.tres" id="2_cq1fw"]
-[ext_resource type="PackedScene" uid="uid://c4fnmvehgs7y1" path="res://scenes/input-control/switch.tscn" id="3_58w0c"]
 
 [node name="Level6" instance=ExtResource("1_5mgxl")]
 level_resource = ExtResource("2_cq1fw")
@@ -12,6 +11,3 @@ position = Vector2(-40, 91)
 
 [node name="ExitDoor" parent="." index="3" node_paths=PackedStringArray("control")]
 control = NodePath("")
-
-[node name="Switch" parent="Components" index="0" instance=ExtResource("3_58w0c")]
-position = Vector2(-77, 69)
