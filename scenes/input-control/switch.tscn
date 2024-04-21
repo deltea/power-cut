@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://gu8smib1m3vp" path="res://assets/switch-off.png" id="4_q1bkm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2cche"]
-size = Vector2(26, 34)
+size = Vector2(32, 32)
 
 [node name="Switch" instance=ExtResource("1_c42fb")]
 script = ExtResource("2_8lhw3")
