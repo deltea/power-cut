@@ -5,6 +5,7 @@ extends CanvasLayer
 @onready var mask: Sprite2D = $BackBufferCopy/Mask
 
 var level_select_room: PackedScene = preload("res://rooms/level_select_room.tscn")
+var title_room: PackedScene = preload("res://rooms/title_room.tscn")
 var level_1_room: PackedScene = preload("res://rooms/levels/level_1.tscn")
 var level_2_room: PackedScene = preload("res://rooms/levels/level_2.tscn")
 var level_3_room: PackedScene = preload("res://rooms/levels/level_3.tscn")
