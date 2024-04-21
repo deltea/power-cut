@@ -47,7 +47,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0.0, deceleration)
 
-	if Input.is_action_just_pressed("jump") or buffer_timer < buffer_time:
+	if Input.is_action_just_pressed("jump") or buffer_timer < buffer_time and not jumped:
 		if is_on_floor() or coyote_timer < coyote_time:
 			velocity.y = -jump_velocity
 			sprite.scale(Vector2.ONE + Vector2(-stretch, stretch))
