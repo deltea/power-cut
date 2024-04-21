@@ -69,3 +69,6 @@ func _physics_process(delta: float) -> void:
 		var collision = get_slide_collision(0)
 		if collision.get_collider() is RigidBody2D:
 			(collision.get_collider() as RigidBody2D).apply_impulse(-collision.get_normal() * push_force)
+
+func trampolined(force: float):
+	velocity.y = -force
