@@ -2,20 +2,22 @@
 
 [ext_resource type="Texture2D" uid="uid://dha6istn3v17m" path="res://assets/box.png" id="1_2ijxb"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g5rry"]
-rough = true
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u6wdw"]
+friction = 0.0
+bounce = 0.5
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2514"]
-size = Vector2(24, 24)
+[sub_resource type="CircleShape2D" id="CircleShape2D_araka"]
+radius = 12.0
 
 [node name="Box" type="RigidBody2D"]
 z_index = 1
-mass = 4.0
-physics_material_override = SubResource("PhysicsMaterial_g5rry")
+physics_material_override = SubResource("PhysicsMaterial_u6wdw")
 can_sleep = false
+lock_rotation = true
+linear_damp = 10.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_2ijxb")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_p2514")
+shape = SubResource("CircleShape2D_araka")

@@ -10,7 +10,7 @@ class_name Player extends CharacterBody2D
 @export var deceleration = 30.0
 @export var coyote_time = 0.15
 @export var buffer_time = 0.15
-@export var push_force = 200
+@export var push_force = 1000.0
 
 @export_category("Animation")
 @export var run_tilt_angle = 20.0
@@ -67,8 +67,9 @@ func _physics_process(delta: float) -> void:
 
 	if get_slide_collision_count() > 0:
 		var collision = get_slide_collision(0)
-		if collision.get_collider() is RigidBody2D:
-			(collision.get_collider() as RigidBody2D).apply_impulse(-collision.get_normal() * push_force)
+		var collider = collision.get_collider()
+		if collider is RigidBody2D and position.y > collider.position.y:
+			(collider as RigidBody2D).apply_force(-collision.get_normal() * push_force)
 
 func trampolined(force: float):
 	velocity.y = -force
