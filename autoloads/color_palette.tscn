@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://3ojw1v6guc64"]
+[gd_scene load_steps=4 format=3 uid="uid://3ojw1v6guc64"]
 
 [ext_resource type="Script" path="res://autoloads/ColorPalette.gd" id="1_1riih"]
 [ext_resource type="Shader" path="res://shaders/palette-filter.gdshader" id="3_pbqvp"]
-[ext_resource type="Texture2D" uid="uid://b7j2fncdvs5gq" path="res://assets/generic/square.png" id="4_0hrh4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lw4gh"]
 shader = ExtResource("3_pbqvp")
@@ -19,8 +18,7 @@ shader_parameter/new_secondary = Color(0, 0, 1, 1)
 layer = 128
 script = ExtResource("1_1riih")
 
-[node name="Overlay" type="TextureRect" parent="."]
+[node name="Overlay" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_lw4gh")
 offset_right = 480.0
 offset_bottom = 270.0
-texture = ExtResource("4_0hrh4")

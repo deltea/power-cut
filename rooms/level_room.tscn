@@ -16,7 +16,7 @@ layer_0/tile_data = PackedInt32Array(458738, 65536, 1, 393202, 65536, 1, 327666,
 position = Vector2(0, 91)
 
 [node name="Background" type="Sprite2D" parent="."]
-z_index = -1
+z_index = -3
 texture_repeat = 2
 position = Vector2(-41, 0)
 texture = ExtResource("6_h05qf")

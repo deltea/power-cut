@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@onready var overlay: TextureRect = $Overlay
+@onready var overlay: ColorRect = $Overlay
 
 var colors: ColorPaletteResource
 
