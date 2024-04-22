@@ -20,3 +20,4 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_activate(value: bool):
 	enabled = value
 	sprite.self_modulate = Color.RED if value else Color.WHITE
+	sprite.scale(Vector2(1.2, 1.2))

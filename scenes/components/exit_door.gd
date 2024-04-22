@@ -1,6 +1,7 @@
 class_name ExitDoor extends ProximityArea
 
 @export var control: InputControl
+@export var inverted = false
 
 @onready var sprite: Sprite = $Sprite
 @onready var particles: CPUParticles2D = $CPUParticles
@@ -18,7 +19,8 @@ func _process(_delta: float) -> void:
 		RoomManager.finish_level()
 
 func _on_activate(value: bool):
+	var val = not value if inverted else value
 	sprite.scale(Vector2(1.2, 1.2))
-	sprite.self_modulate = Color.RED if value else Color.WHITE
-	particles.color = Color.RED if value else Color.WHITE
-	particles.visible = value
+	sprite.self_modulate = Color.RED if val else Color.WHITE
+	particles.color = Color.RED if val else Color.WHITE
+	particles.visible = val
