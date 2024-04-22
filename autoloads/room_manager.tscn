@@ -14,6 +14,7 @@ transform = Transform2D(1, 0, 0, 1, 240, 135)
 script = ExtResource("1_725n6")
 
 [node name="BackBufferCopy" type="BackBufferCopy" parent="."]
+copy_mode = 2
 
 [node name="Background" type="Sprite2D" parent="BackBufferCopy"]
 scale = Vector2(480, 270)

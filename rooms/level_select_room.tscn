@@ -31,6 +31,7 @@ font = ExtResource("14_vnl8i")
 script = ExtResource("1_bxplm")
 camera_dynamics = SubResource("Resource_xwxbj")
 select_circles_parent = NodePath("LevelSelectCircles")
+stars_box = Vector2(2500, 500)
 color_palette = ExtResource("2_7cn1l")
 limit_x = 10000
 limit_y = 10000
@@ -73,7 +74,7 @@ level_resource = ExtResource("6_iv7df")
 num = 4
 
 [node name="LevelSelectCircle5" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
-position = Vector2(626, -51)
+position = Vector2(619, -51)
 level_resource = ExtResource("7_4i1jh")
 num = 5
 
@@ -83,7 +84,7 @@ level_resource = ExtResource("8_63bjs")
 num = 6
 
 [node name="LevelSelectCircle7" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
-position = Vector2(984, -6)
+position = Vector2(977, -26)
 level_resource = ExtResource("14_753jc")
 num = 7
 

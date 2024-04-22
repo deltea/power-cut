@@ -57,7 +57,7 @@ func _ready() -> void:
 	# Adding the stars
 	for j in range(stars_amount):
 		var star = star_scene.instantiate() as Sprite2D
-		var x = randf_range(0, stars_box.x)
+		var x = randf_range(-240, stars_box.x)
 		var y = randf_range(-stars_box.y / 2, stars_box.y / 2)
 		star.position = Vector2(x - 240, y)
 		stars.add_child(star)
@@ -85,11 +85,13 @@ func _process(_delta: float) -> void:
 	if input: update_selection(input)
 
 	if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("jump"):
+		select_circles[index].press()
+
 		if select_circles[index].locked:
 			camera.shake(0.1, 2)
 		elif select_circles[index] is SettingsSelectCircle:
 			print("ye")
 		elif select_circles[index] is WinSelectCircle:
-			print("win")
+			select_circles[index].confetti_explosion()
 		else:
 			RoomManager.play_level(select_circles[index].level_resource)

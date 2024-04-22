@@ -25,3 +25,6 @@ func update():
 	completed_indicator.visible = completed
 	locked_indicator.visible = locked
 	title_label.position.y = 20 if bottom_title else -32
+
+func press():
+	sprite.scale(Vector2(1.2, 1.2))
