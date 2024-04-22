@@ -24,4 +24,4 @@ func update():
 	num_label.text = str(num)
 	completed_indicator.visible = completed
 	locked_indicator.visible = locked
-	title_label.position.y = 18 if bottom_title else -30
+	title_label.position.y = 20 if bottom_title else -32
