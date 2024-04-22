@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://dcuhl80w0lvmi"]
+
+[ext_resource type="PackedScene" uid="uid://8c6n3jqhpthv" path="res://utils/sprite-plus/sprite.tscn" id="1_3fldp"]
+[ext_resource type="Script" path="res://scenes/winning.gd" id="1_e5mgy"]
+[ext_resource type="Texture2D" uid="uid://ca1lr6x78afah" path="res://assets/generic/circle-big.png" id="2_0pqti"]
+[ext_resource type="Texture2D" uid="uid://cpr0y7y4d34li" path="res://assets/generic/circle-small.png" id="3_ngcva"]
+
+[sub_resource type="Curve" id="Curve_7x28p"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_1q8l7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.736486, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.42366, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ixfc"]
+radius = 19.0
+
+[node name="Winning" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_e5mgy")
+
+[node name="Sprite" parent="." instance=ExtResource("1_3fldp")]
+self_modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_0pqti")
+
+[node name="Particles" type="CPUParticles2D" parent="."]
+lifetime = 1.5
+preprocess = 2.0
+texture = ExtResource("3_ngcva")
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 20.0
+initial_velocity_max = 20.0
+angle_min = -360.0
+angle_max = 360.0
+angle_curve = SubResource("Curve_7x28p")
+scale_amount_max = 1.5
+scale_amount_curve = SubResource("Curve_1q8l7")
+color = Color(1, 0, 0, 1)
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6ixfc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

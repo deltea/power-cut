@@ -1,5 +1,7 @@
 class_name Sprite extends Sprite2D
 
+signal flash_finished
+
 @export_group("Dynamics")
 @export var scale_dynamics_enabled = true
 @export var scale_dynamics: DynamicsResource
@@ -7,15 +9,11 @@ class_name Sprite extends Sprite2D
 @export var rotation_dynamics: DynamicsResource
 
 @onready var flash_timer: Timer = $FlashTimer
-
-signal flash_finished
-
-var target_scale = Vector2.ONE
-var target_rotation_degrees = 0.0
-
 @onready var scale_dynamics_solver := Globals.create_dynamics_vector(scale_dynamics)
 @onready var rotation_dynamics_solver := Globals.create_dynamics(rotation_dynamics)
 
+var target_scale = Vector2.ONE
+var target_rotation_degrees = 0.0
 var shadow: Sprite2D
 
 func _ready() -> void:

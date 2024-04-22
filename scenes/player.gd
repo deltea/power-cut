@@ -22,6 +22,7 @@ class_name Player extends CharacterBody2D
 var jumped = false
 var coyote_timer = 0.0
 var buffer_timer = buffer_time
+var can_move = true
 
 func _enter_tree() -> void:
 	Globals.player = self
@@ -42,12 +43,12 @@ func _physics_process(delta: float) -> void:
 			velocity.y += gravity * delta
 
 	sprite.target_rotation_degrees = x_input * run_tilt_angle
-	if x_input:
+	if x_input and can_move:
 		velocity.x = move_toward(velocity.x, x_input * max_speed, acceleration)
 	else:
 		velocity.x = move_toward(velocity.x, 0.0, deceleration)
 
-	if Input.is_action_just_pressed("jump") or buffer_timer < buffer_time and not jumped:
+	if Input.is_action_just_pressed("jump") or buffer_timer < buffer_time and not jumped and can_move:
 		if is_on_floor() or coyote_timer < coyote_time:
 			velocity.y = -jump_velocity
 			sprite.scale(Vector2.ONE + Vector2(-stretch, stretch))
@@ -73,3 +74,17 @@ func _physics_process(delta: float) -> void:
 
 func trampolined(force: float):
 	velocity.y = -force
+
+func win(winning: Winning):
+	can_move = false
+	velocity = Vector2.ZERO
+
+	sprite.rotation_dynamics_enabled = false
+	sprite.scale_dynamics_enabled = false
+	sprite.offset = Vector2.ZERO
+	sprite.position = Vector2(0, -7)
+
+	var tweener = get_tree().create_tween().set_parallel(true)
+	tweener.tween_property(sprite, "target_scale", Vector2.ZERO, 1)
+	tweener.tween_property(sprite, "global_position", winning.position, 1)
+	tweener.tween_property(sprite, "rotation_degrees", 360, 1)

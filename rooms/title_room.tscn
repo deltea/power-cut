@@ -1,18 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://dr57dg72pfwqs"]
+[gd_scene load_steps=9 format=3 uid="uid://dr57dg72pfwqs"]
 
 [ext_resource type="Script" path="res://rooms/title_room.gd" id="1_sdfj2"]
-[ext_resource type="Script" path="res://scripts/color_palette_resource.gd" id="2_jobci"]
+[ext_resource type="Resource" path="res://color-palettes/bumblebit.tres" id="2_akf3x"]
 [ext_resource type="PackedScene" uid="uid://nnqr388phn4e" path="res://scenes/camera.tscn" id="3_4ggur"]
-
-[sub_resource type="Resource" id="Resource_vkeoq"]
-script = ExtResource("2_jobci")
-primary = Color(1, 1, 1, 1)
-secondary = Color(0, 0, 0, 1)
-dark = Color(0, 0, 0, 1)
-light = Color(1, 1, 1, 1)
+[ext_resource type="Resource" uid="uid://dcp07b8xi7lwc" path="res://color-palettes/crimson.tres" id="3_s7tg6"]
+[ext_resource type="Resource" path="res://color-palettes/dnot_forget.tres" id="4_a8re6"]
+[ext_resource type="Resource" uid="uid://dktrk8isxpgne" path="res://color-palettes/rustic.tres" id="5_wt6tk"]
+[ext_resource type="Resource" uid="uid://dnmmuxp0irfjd" path="res://color-palettes/space_haze.tres" id="6_vfu23"]
+[ext_resource type="Resource" uid="uid://y0bk14jkld4b" path="res://color-palettes/stone.tres" id="7_u0r0r"]
 
 [node name="TitleRoom" type="Node2D"]
 script = ExtResource("1_sdfj2")
-color_palette = SubResource("Resource_vkeoq")
+color_palettes = Array[Resource("res://scripts/color_palette_resource.gd")]([ExtResource("2_akf3x"), ExtResource("3_s7tg6"), ExtResource("4_a8re6"), ExtResource("5_wt6tk"), ExtResource("6_vfu23"), ExtResource("7_u0r0r")])
 
 [node name="Camera" parent="." instance=ExtResource("3_4ggur")]

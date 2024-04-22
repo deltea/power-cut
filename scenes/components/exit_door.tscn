@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/components/exit_door.gd" id="1_iqvna"]
 [ext_resource type="PackedScene" uid="uid://8c6n3jqhpthv" path="res://utils/sprite-plus/sprite.tscn" id="2_k2re2"]
 [ext_resource type="Texture2D" uid="uid://bu8aomehk1w1n" path="res://assets/exit-door.png" id="3_vs023"]
-[ext_resource type="Texture2D" uid="uid://cpr0y7y4d34li" path="res://assets/generic/circle-small.png" id="4_5hxhk"]
+[ext_resource type="Texture2D" uid="uid://d02fu8dnpix2j" path="res://assets/generic/square-small.png" id="4_2rpvq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_exmc5"]
 size = Vector2(32, 39)
@@ -33,7 +33,7 @@ offset = Vector2(0, -18)
 amount = 10
 lifetime = 1.5
 preprocess = 3.0
-texture = ExtResource("4_5hxhk")
+texture = ExtResource("4_2rpvq")
 spread = 180.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 20.0
