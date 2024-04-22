@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://uqdq7qwompw0"]
+[gd_scene load_steps=18 format=3 uid="uid://uqdq7qwompw0"]
 
 [ext_resource type="Script" path="res://rooms/level_select_room.gd" id="1_bxplm"]
 [ext_resource type="Resource" path="res://color-palettes/bumblebit.tres" id="2_7cn1l"]
@@ -13,12 +13,17 @@
 [ext_resource type="PackedScene" uid="uid://nnqr388phn4e" path="res://scenes/camera.tscn" id="9_qs8y1"]
 [ext_resource type="PackedScene" uid="uid://ckspbow23i3go" path="res://scenes/ui/settings_select_circle.tscn" id="12_ehuun"]
 [ext_resource type="PackedScene" uid="uid://b4mgwq0q82nwk" path="res://scenes/ui/win_select_circle.tscn" id="13_pklqh"]
+[ext_resource type="FontFile" uid="uid://cchy2jc4rwkr0" path="res://assets/fonts/hefty-me.ttf" id="14_vnl8i"]
+[ext_resource type="Texture2D" uid="uid://g3fj55jkpw2i" path="res://assets/ui/arrow.png" id="15_ade77"]
 
 [sub_resource type="Resource" id="Resource_xwxbj"]
 script = ExtResource("2_nwmo1")
 f = 2.0
 z = 0.5
 r = 2.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_oc65g"]
+font = ExtResource("14_vnl8i")
 
 [node name="LevelSelectRoom" type="Node2D" node_paths=PackedStringArray("select_circles_parent")]
 script = ExtResource("1_bxplm")
@@ -73,3 +78,46 @@ num = 6
 [node name="WinSelectCircle" parent="LevelSelectCircles" instance=ExtResource("13_pklqh")]
 position = Vector2(1004, -81)
 level_resource = ExtResource("3_25x6q")
+
+[node name="Instructions" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -138.0
+offset_top = 58.0
+offset_right = -38.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "        /        to move"
+label_settings = SubResource("LabelSettings_oc65g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeftIcon" type="Sprite2D" parent="Instructions"]
+position = Vector2(16, 14)
+texture = ExtResource("15_ade77")
+
+[node name="RightIcon" type="Sprite2D" parent="Instructions"]
+position = Vector2(38, 14)
+texture = ExtResource("15_ade77")
+flip_h = true
+
+[node name="Instructions2" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = 58.0
+offset_right = 135.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "z/x  to select"
+label_settings = SubResource("LabelSettings_oc65g")
+horizontal_alignment = 1
+vertical_alignment = 1
