@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://uqdq7qwompw0"]
+[gd_scene load_steps=19 format=3 uid="uid://uqdq7qwompw0"]
 
 [ext_resource type="Script" path="res://rooms/level_select_room.gd" id="1_bxplm"]
 [ext_resource type="Resource" path="res://color-palettes/bumblebit.tres" id="2_7cn1l"]
 [ext_resource type="Script" path="res://utils/dynamics/dynamics_resource.gd" id="2_nwmo1"]
 [ext_resource type="Resource" uid="uid://bk6a10vhvtxlo" path="res://rooms/levels/level_1.tres" id="3_25x6q"]
 [ext_resource type="Resource" uid="uid://bydkfhqtqtrfw" path="res://rooms/levels/level_2.tres" id="4_isqk8"]
+[ext_resource type="Texture2D" uid="uid://bd50s8pnnka82" path="res://assets/title.png" id="5_7t63a"]
 [ext_resource type="PackedScene" uid="uid://cnmr7rmu2r1wb" path="res://scenes/ui/level_select_circle.tscn" id="5_v3cet"]
 [ext_resource type="Resource" uid="uid://d2qyw1biptt56" path="res://rooms/levels/level_3.tres" id="5_y15hj"]
 [ext_resource type="Resource" uid="uid://br07ahu5a0jj5" path="res://rooms/levels/level_4.tres" id="6_iv7df"]
@@ -40,6 +41,11 @@ position_smoothing_enabled = false
 [node name="Stars" type="Node2D" parent="."]
 z_index = -1
 
+[node name="Title" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(6, -85)
+texture = ExtResource("5_7t63a")
+
 [node name="LevelSelectCircles" type="Node2D" parent="."]
 
 [node name="SettingsSelectCircle" parent="LevelSelectCircles" instance=ExtResource("12_ehuun")]
@@ -51,7 +57,7 @@ level_resource = ExtResource("3_25x6q")
 num = 1
 
 [node name="LevelSelectCircle2" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
-position = Vector2(124, -77)
+position = Vector2(175, -16)
 level_resource = ExtResource("4_isqk8")
 num = 2
 
@@ -86,9 +92,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -138.0
-offset_top = 58.0
+offset_top = 66.0
 offset_right = -38.0
-offset_bottom = 89.0
+offset_bottom = 97.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "        /        to move"
@@ -112,9 +118,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = 27.0
-offset_top = 58.0
+offset_top = 66.0
 offset_right = 135.0
-offset_bottom = 89.0
+offset_bottom = 97.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "z/x  to select"

@@ -22,17 +22,18 @@ script = ExtResource("1_hsr2r")
 texture = ExtResource("3_uck3l")
 
 [node name="Title" type="Label" parent="Sprite"]
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 offset_left = -51.0
-offset_top = -64.0
+offset_top = 2.0
 offset_right = 19.0
-offset_bottom = -50.0
+offset_bottom = 16.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+pivot_offset = Vector2(35, 7)
 text = "Start"
 label_settings = SubResource("LabelSettings_tbutb")
 horizontal_alignment = 1

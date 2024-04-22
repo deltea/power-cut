@@ -44,6 +44,9 @@ func _ready() -> void:
 		var next_circle = select_circles[x + 1]
 		var normal = (circle.position - next_circle.position).normalized()
 
+		select_circles[x].bottom_title = circle.position.y > next_circle.position.y
+		select_circles[x].update()
+
 		var dotted_line = dotted_line_scene.instantiate() as Line2D
 		var offset = normal * dotted_line_padding
 		dotted_line.add_point(circle.position - offset, 0)

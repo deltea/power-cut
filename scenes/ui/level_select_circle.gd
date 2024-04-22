@@ -12,6 +12,7 @@ class_name LevelSelectCircle extends Node2D
 
 var completed = false
 var locked = false
+var bottom_title = false
 var selected = false:
 	get: return selected
 	set(value):
@@ -23,3 +24,4 @@ func update():
 	num_label.text = str(num)
 	completed_indicator.visible = completed
 	locked_indicator.visible = locked
+	title_label.position.y = 18 if bottom_title else -30
