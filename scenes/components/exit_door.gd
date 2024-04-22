@@ -14,6 +14,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and touching and (control.enabled if control else true):
+		Globals.player.can_move = false
 		RoomManager.finish_level()
 
 func _on_activate(value: bool):

@@ -1,8 +1,7 @@
 class_name LevelSelect extends Room
 
 @export var camera_dynamics: DynamicsResource
-@export var level_resources: Array[LevelResource]
-@export var select_circle_gap = Vector2(150.0, 25.0)
+@export var select_circles_parent: Node2D
 @export var dotted_line_padding = 30.0
 @export var stars_parallax = 0.8
 @export var stars_amount = 50
@@ -14,44 +13,35 @@ class_name LevelSelect extends Room
 
 var index = 0
 var camera_target_position = Vector2.ZERO
-var level_select_circles: Array[LevelSelectCircle] = []
-var level_select_circle_scene = preload("res://scenes/ui/level_select_circle.tscn")
+var select_circles: Array[LevelSelectCircle] = []
 var dotted_line_scene = preload("res://scenes/dotted_line.tscn")
 var star_scene = preload("res://scenes/star.tscn")
+var settings_select_circle_scene = preload("res://scenes/ui/settings_select_circle.tscn")
 
 func _ready() -> void:
 	var level = RoomManager.load_level()
-	index = level
+	index = level + 1
 
-	# Adding the circles
-	for i in range(len(level_resources)):
-		var level_select_circle = level_select_circle_scene.instantiate() as LevelSelectCircle
-		var x = i * select_circle_gap.x
-		var y = select_circle_gap.y if i % 2 == 0 else -select_circle_gap.y
+	for child in select_circles_parent.get_children():
+		if child is LevelSelectCircle:
+			select_circles.push_back(child)
 
-		level_select_circle.position = Vector2(x, y)
-		level_select_circle.level_resource = level_resources[i]
-		level_select_circle.num = i + 1
+	# Setting the circles
+	for i in range(len(select_circles)):
+		if select_circles[i] is SettingsSelectCircle: continue
 
 		if i < level:
-			level_select_circle.completed = true
-		elif i > level:
-			level_select_circle.locked = true
-
-		level_select_circles.push_back(level_select_circle)
-
-		add_child(level_select_circle)
-
-		if i == 0:
-			camera_target_position = level_select_circle.position
-			level_select_circle.selected = true
+			select_circles[i].completed = true
+		elif i-1 > level:
+			select_circles[i].locked = true
+		select_circles[i].update()
 
 	# Adding dotted lines
-	for x in range(len(level_select_circles)):
-		if x == len(level_resources) - 1: break
+	for x in range(len(select_circles)):
+		if x == len(select_circles) - 1: break
 
-		var circle = level_select_circles[x]
-		var next_circle = level_select_circles[x + 1]
+		var circle = select_circles[x]
+		var next_circle = select_circles[x + 1]
 		var normal = (circle.position - next_circle.position).normalized()
 
 		var dotted_line = dotted_line_scene.instantiate() as Line2D
@@ -72,12 +62,13 @@ func _ready() -> void:
 	update_selection()
 
 func update_selection(value: int = 0):
-	var prev_index = clampi(index, 0, len(level_select_circles) - 1)
-	level_select_circles[prev_index].selected = false
-	index = clampi(index + value, 0, len(level_select_circles) - 1)
-	level_select_circles[index].selected = true
-	camera_target_position = level_select_circles[index].position
-	color_palette = level_resources[index].color_palette
+	var prev_index = clampi(index, 0, len(select_circles) - 1)
+	select_circles[prev_index].selected = false
+
+	index = clampi(index + value, 0, len(select_circles) - 1)
+	select_circles[index].selected = true
+	camera_target_position = select_circles[index].position
+	color_palette = select_circles[index].level_resource.color_palette
 	ColorPalette.update_color_palette()
 
 func _process(_delta: float) -> void:
@@ -91,7 +82,11 @@ func _process(_delta: float) -> void:
 	if input: update_selection(input)
 
 	if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("jump"):
-		if level_select_circles[index].locked:
+		if select_circles[index].locked:
 			camera.shake(0.1, 2)
+		elif select_circles[index] is SettingsSelectCircle:
+			print("ye")
+		elif select_circles[index] is WinSelectCircle:
+			print("win")
 		else:
-			RoomManager.play_level(level_resources[index])
+			RoomManager.play_level(select_circles[index].level_resource)

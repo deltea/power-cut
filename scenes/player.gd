@@ -42,11 +42,15 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.y += gravity * delta
 
-	sprite.target_rotation_degrees = x_input * run_tilt_angle
-	if x_input and can_move:
-		velocity.x = move_toward(velocity.x, x_input * max_speed, acceleration)
+	if can_move:
+		sprite.target_rotation_degrees = x_input * run_tilt_angle
+		if x_input:
+			velocity.x = move_toward(velocity.x, x_input * max_speed, acceleration)
+		else:
+			velocity.x = move_toward(velocity.x, 0.0, deceleration)
 	else:
-		velocity.x = move_toward(velocity.x, 0.0, deceleration)
+		sprite.target_rotation_degrees = 0
+		velocity.x = 0
 
 	if Input.is_action_just_pressed("jump") or buffer_timer < buffer_time and not jumped and can_move:
 		if is_on_floor() or coyote_timer < coyote_time:

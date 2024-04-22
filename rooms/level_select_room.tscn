@@ -1,15 +1,18 @@
-[gd_scene load_steps=12 format=3 uid="uid://uqdq7qwompw0"]
+[gd_scene load_steps=15 format=3 uid="uid://uqdq7qwompw0"]
 
 [ext_resource type="Script" path="res://rooms/level_select_room.gd" id="1_bxplm"]
 [ext_resource type="Resource" path="res://color-palettes/bumblebit.tres" id="2_7cn1l"]
 [ext_resource type="Script" path="res://utils/dynamics/dynamics_resource.gd" id="2_nwmo1"]
 [ext_resource type="Resource" uid="uid://bk6a10vhvtxlo" path="res://rooms/levels/level_1.tres" id="3_25x6q"]
 [ext_resource type="Resource" uid="uid://bydkfhqtqtrfw" path="res://rooms/levels/level_2.tres" id="4_isqk8"]
+[ext_resource type="PackedScene" uid="uid://cnmr7rmu2r1wb" path="res://scenes/ui/level_select_circle.tscn" id="5_v3cet"]
 [ext_resource type="Resource" uid="uid://d2qyw1biptt56" path="res://rooms/levels/level_3.tres" id="5_y15hj"]
 [ext_resource type="Resource" uid="uid://br07ahu5a0jj5" path="res://rooms/levels/level_4.tres" id="6_iv7df"]
 [ext_resource type="Resource" uid="uid://cxr05agifm1k0" path="res://rooms/levels/level_5.tres" id="7_4i1jh"]
 [ext_resource type="Resource" uid="uid://dg0yacyupake2" path="res://rooms/levels/level_6.tres" id="8_63bjs"]
 [ext_resource type="PackedScene" uid="uid://nnqr388phn4e" path="res://scenes/camera.tscn" id="9_qs8y1"]
+[ext_resource type="PackedScene" uid="uid://ckspbow23i3go" path="res://scenes/ui/settings_select_circle.tscn" id="12_ehuun"]
+[ext_resource type="PackedScene" uid="uid://b4mgwq0q82nwk" path="res://scenes/ui/win_select_circle.tscn" id="13_pklqh"]
 
 [sub_resource type="Resource" id="Resource_xwxbj"]
 script = ExtResource("2_nwmo1")
@@ -17,10 +20,10 @@ f = 2.0
 z = 0.5
 r = 2.0
 
-[node name="LevelSelectRoom" type="Node2D"]
+[node name="LevelSelectRoom" type="Node2D" node_paths=PackedStringArray("select_circles_parent")]
 script = ExtResource("1_bxplm")
 camera_dynamics = SubResource("Resource_xwxbj")
-level_resources = Array[Resource("res://scripts/level_resource.gd")]([ExtResource("3_25x6q"), ExtResource("4_isqk8"), ExtResource("5_y15hj"), ExtResource("6_iv7df"), ExtResource("7_4i1jh"), ExtResource("8_63bjs")])
+select_circles_parent = NodePath("LevelSelectCircles")
 color_palette = ExtResource("2_7cn1l")
 limit_x = 10000
 limit_y = 10000
@@ -31,3 +34,42 @@ position_smoothing_enabled = false
 
 [node name="Stars" type="Node2D" parent="."]
 z_index = -1
+
+[node name="LevelSelectCircles" type="Node2D" parent="."]
+
+[node name="SettingsSelectCircle" parent="LevelSelectCircles" instance=ExtResource("12_ehuun")]
+position = Vector2(-109, 0)
+level_resource = ExtResource("3_25x6q")
+
+[node name="LevelSelectCircle" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
+level_resource = ExtResource("3_25x6q")
+num = 1
+
+[node name="LevelSelectCircle2" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
+position = Vector2(124, -77)
+level_resource = ExtResource("4_isqk8")
+num = 2
+
+[node name="LevelSelectCircle3" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
+position = Vector2(322, -96)
+level_resource = ExtResource("5_y15hj")
+num = 3
+
+[node name="LevelSelectCircle4" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
+position = Vector2(484, -165)
+level_resource = ExtResource("6_iv7df")
+num = 4
+
+[node name="LevelSelectCircle5" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
+position = Vector2(626, -51)
+level_resource = ExtResource("7_4i1jh")
+num = 5
+
+[node name="LevelSelectCircle6" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
+position = Vector2(825, -32)
+level_resource = ExtResource("8_63bjs")
+num = 6
+
+[node name="WinSelectCircle" parent="LevelSelectCircles" instance=ExtResource("13_pklqh")]
+position = Vector2(1004, -81)
+level_resource = ExtResource("3_25x6q")

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4mgwq0q82nwk"]
+
+[ext_resource type="PackedScene" uid="uid://cnmr7rmu2r1wb" path="res://scenes/ui/level_select_circle.tscn" id="1_a1xdx"]
+[ext_resource type="Script" path="res://scenes/ui/win_select_circle.gd" id="2_jseh6"]
+[ext_resource type="Texture2D" uid="uid://bjvb1sno5n40h" path="res://assets/ui/win-icon.png" id="2_oslpv"]
+
+[node name="WinSelectCircle" instance=ExtResource("1_a1xdx")]
+script = ExtResource("2_jseh6")
+
+[node name="Title" parent="Sprite" index="1"]
+text = "???"
+
+[node name="Num" parent="Sprite" index="2"]
+visible = false
+
+[node name="Locked" parent="Sprite" index="6"]
+visible = false
+
+[node name="WinIcon" type="Sprite2D" parent="Sprite" index="7"]
+texture = ExtResource("2_oslpv")

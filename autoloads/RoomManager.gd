@@ -54,6 +54,7 @@ func play_level(level: LevelResource):
 	ColorPalette.update_color_palette()
 
 func finish_level():
+	print("finish")
 	var level = get_resource_name(current_room.level_resource).replace("level_", "").to_int()
 	if level > load_level():
 		save_level(level)
