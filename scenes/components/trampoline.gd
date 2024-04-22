@@ -11,6 +11,8 @@ func _ready() -> void:
 	if control:
 		control.activate.connect(_on_activate)
 		_on_activate(control.enabled)
+	else:
+		_on_activate(true)
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player and enabled:

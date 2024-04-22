@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=3 format=3 uid="uid://c0ufnxjkx2qbb"]
+
+[ext_resource type="Resource" uid="uid://cfkthqnm7ysbg" path="res://color-palettes/honey.tres" id="1_cef6h"]
+[ext_resource type="Script" path="res://scripts/level_resource.gd" id="2_m3c0f"]
+
+[resource]
+script = ExtResource("2_m3c0f")
+name = "Train"
+color_palette = ExtResource("1_cef6h")

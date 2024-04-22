@@ -6,6 +6,8 @@ class_name ExitDoor extends ProximityArea
 @onready var sprite: Sprite = $Sprite
 @onready var particles: CPUParticles2D = $CPUParticles
 
+var enabled = false
+
 func _ready() -> void:
 	if control:
 		control.activate.connect(_on_activate)
@@ -14,13 +16,13 @@ func _ready() -> void:
 		_on_activate(true)
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("interact") and touching and (control.enabled if control else true):
+	if Input.is_action_just_pressed("interact") and touching and (enabled if control else true):
 		Globals.player.can_move = false
 		RoomManager.finish_level()
 
 func _on_activate(value: bool):
-	var val = not value if inverted else value
+	enabled = not value if inverted else value
 	sprite.scale(Vector2(1.2, 1.2))
-	sprite.self_modulate = Color.RED if val else Color.WHITE
-	particles.color = Color.RED if val else Color.WHITE
-	particles.visible = val
+	sprite.self_modulate = Color.RED if enabled else Color.WHITE
+	particles.color = Color.RED if enabled else Color.WHITE
+	particles.visible = enabled

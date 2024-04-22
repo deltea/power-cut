@@ -61,6 +61,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and not is_on_floor():
 		buffer_timer = 0.0
 
+	if Input.is_action_just_pressed("down"):
+		position.y += 2
+
 	var was_on_floor = is_on_floor()
 	move_and_slide()
 
