@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://kvi2j4wq3m45"]
+[gd_scene load_steps=7 format=3 uid="uid://kvi2j4wq3m45"]
 
 [ext_resource type="PackedScene" uid="uid://dcdr6lakd0s6j" path="res://scenes/input-control/input_control.tscn" id="1_f7os6"]
 [ext_resource type="Texture2D" uid="uid://ck37fves7end5" path="res://assets/lever-on.png" id="2_chqrl"]
 [ext_resource type="Script" path="res://scenes/input-control/lever.gd" id="2_jmgw8"]
 [ext_resource type="Texture2D" uid="uid://rwuhj65iggqc" path="res://assets/lever-off.png" id="4_yng4n"]
+[ext_resource type="Texture2D" uid="uid://bb7tq0hqbmu5s" path="res://assets/lever-off-alt.png" id="5_gydyv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wuyi"]
 size = Vector2(30, 20)
@@ -12,7 +13,9 @@ size = Vector2(30, 20)
 script = ExtResource("2_jmgw8")
 enabled_texture = ExtResource("2_chqrl")
 disabled_texture = ExtResource("4_yng4n")
+alt_disabled_texture = ExtResource("5_gydyv")
 default_enabled = false
+alt_disabled = false
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource("2_chqrl")
