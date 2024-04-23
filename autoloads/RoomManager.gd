@@ -70,6 +70,7 @@ func _process(_delta: float) -> void:
 			get_tree().quit()
 
 	if Input.is_action_just_pressed("restart") and current_room is LevelRoom and not transitioning:
+		AudioManager.play_sound(AudioManager.restart)
 		var current_level = (current_room as LevelRoom)
 		change_room(get_resource_name(current_level.level_resource))
 
