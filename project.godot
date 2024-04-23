@@ -21,6 +21,7 @@ Clock="*res://autoloads/Clock.gd"
 Globals="*res://autoloads/Globals.gd"
 RoomManager="*res://autoloads/room_manager.tscn"
 ColorPalette="*res://autoloads/color_palette.tscn"
+AudioManager="*res://autoloads/audio_manager.tscn"
 
 [display]
 

@@ -22,6 +22,8 @@ func _ready() -> void:
 	var level = RoomManager.load_level()
 	index = level + 1
 
+	AudioManager.play_music(AudioManager.level_select_music)
+
 	for child in select_circles_parent.get_children():
 		if child is LevelSelectCircle:
 			select_circles.push_back(child)
