@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://by4ry8e20r1l6"]
+[gd_scene load_steps=8 format=3 uid="uid://by4ry8e20r1l6"]
 
 [ext_resource type="PackedScene" uid="uid://hlp28anwneby" path="res://rooms/level_room.tscn" id="1_846bo"]
 [ext_resource type="PackedScene" uid="uid://c0qxefqb235va" path="res://scenes/components/door.tscn" id="2_4u1oc"]
 [ext_resource type="Resource" uid="uid://bk6a10vhvtxlo" path="res://rooms/levels/level_1.tres" id="2_u7qac"]
 [ext_resource type="PackedScene" uid="uid://kvi2j4wq3m45" path="res://scenes/input-control/lever.tscn" id="3_s8y7a"]
 [ext_resource type="PackedScene" uid="uid://ixj7oladamx7" path="res://scenes/power_line.tscn" id="4_aj6vc"]
+[ext_resource type="FontFile" uid="uid://cchy2jc4rwkr0" path="res://assets/fonts/hefty-me.ttf" id="6_ul6rk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6auld"]
+font = ExtResource("6_ul6rk")
 
 [node name="Level1" instance=ExtResource("1_846bo")]
 level_resource = ExtResource("2_u7qac")
@@ -28,3 +32,13 @@ power_line = NodePath("PowerLine")
 
 [node name="PowerLine" parent="Components/Lever" index="2" instance=ExtResource("4_aj6vc")]
 points = PackedVector2Array(149, 4, 149, 17, 0, 17, 0, 4)
+
+[node name="Tutorial" type="Label" parent="." index="5"]
+offset_left = -152.0
+offset_top = -41.0
+offset_right = -79.0
+offset_bottom = -10.0
+text = "z to jump
+x to interact"
+label_settings = SubResource("LabelSettings_6auld")
+horizontal_alignment = 1
