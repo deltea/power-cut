@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://uqdq7qwompw0"]
+[gd_scene load_steps=23 format=3 uid="uid://uqdq7qwompw0"]
 
 [ext_resource type="Script" path="res://rooms/level_select_room.gd" id="1_bxplm"]
 [ext_resource type="Resource" path="res://color-palettes/bumblebit.tres" id="2_7cn1l"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://nnqr388phn4e" path="res://scenes/camera.tscn" id="9_qs8y1"]
 [ext_resource type="PackedScene" uid="uid://b4mgwq0q82nwk" path="res://scenes/ui/win_select_circle.tscn" id="13_pklqh"]
 [ext_resource type="Resource" uid="uid://c0ufnxjkx2qbb" path="res://rooms/levels/level_7.tres" id="14_753jc"]
+[ext_resource type="Resource" uid="uid://bqwbxbqkch3b8" path="res://rooms/levels/level_8.tres" id="14_vcpx8"]
 [ext_resource type="FontFile" uid="uid://cchy2jc4rwkr0" path="res://assets/fonts/hefty-me.ttf" id="14_vnl8i"]
 [ext_resource type="Resource" uid="uid://dcp07b8xi7lwc" path="res://color-palettes/crimson.tres" id="15_17tl0"]
 [ext_resource type="Texture2D" uid="uid://g3fj55jkpw2i" path="res://assets/ui/arrow.png" id="15_ade77"]
@@ -90,8 +91,13 @@ position = Vector2(977, -26)
 level_resource = ExtResource("14_753jc")
 num = 7
 
+[node name="LevelSelectCircle8" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
+position = Vector2(1115, -133)
+level_resource = ExtResource("14_vcpx8")
+num = 8
+
 [node name="WinSelectCircle" parent="LevelSelectCircles" instance=ExtResource("13_pklqh")]
-position = Vector2(1144, -81)
+position = Vector2(1324, -117)
 level_resource = SubResource("Resource_pxt3e")
 
 [node name="Instructions" type="Label" parent="."]

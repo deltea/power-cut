@@ -20,7 +20,7 @@ var settings_select_circle_scene = preload("res://scenes/ui/settings_select_circ
 
 func _ready() -> void:
 	var level = RoomManager.load_level()
-	index = level + 1
+	index = level
 
 	# AudioManager.play_music(AudioManager.level_select_music)
 
@@ -34,7 +34,7 @@ func _ready() -> void:
 
 		if i < level:
 			select_circles[i].completed = true
-		elif i-1 > level:
+		elif i > level:
 			select_circles[i].locked = true
 		select_circles[i].update()
 

@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://i64slr315uow"]
+
+[ext_resource type="PackedScene" uid="uid://hlp28anwneby" path="res://rooms/level_room.tscn" id="1_lavh7"]
+[ext_resource type="Resource" uid="uid://bqwbxbqkch3b8" path="res://rooms/levels/level_8.tres" id="2_ypxpe"]
+
+[node name="Level8" instance=ExtResource("1_lavh7")]
+level_resource = ExtResource("2_ypxpe")
