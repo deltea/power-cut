@@ -22,7 +22,7 @@ func _ready() -> void:
 	var level = RoomManager.load_level()
 	index = level + 1
 
-	AudioManager.play_music(AudioManager.level_select_music)
+	# AudioManager.play_music(AudioManager.level_select_music)
 
 	for child in select_circles_parent.get_children():
 		if child is LevelSelectCircle:
@@ -85,7 +85,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("right"): input += 1
 
 	if input:
-		AudioManager.play_sound(AudioManager.level_selection)
+		AudioManager.play_sound(AudioManager.level_selection, 0.1)
 		update_selection(input)
 
 	if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("jump"):
@@ -97,6 +97,7 @@ func _process(_delta: float) -> void:
 		elif select_circles[index] is SettingsSelectCircle:
 			print("ye")
 		elif select_circles[index] is WinSelectCircle:
+			AudioManager.play_sound(AudioManager.win)
 			select_circles[index].confetti_explosion()
 		else:
 			AudioManager.play_sound(AudioManager.level_selected)

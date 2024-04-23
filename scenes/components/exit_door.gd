@@ -17,6 +17,8 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and touching and (enabled if control else true):
+		sprite.scale(Vector2(1.2, 1.2))
+		AudioManager.play_sound(AudioManager.exit_door)
 		Globals.player.can_move = false
 		RoomManager.finish_level()
 

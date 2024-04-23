@@ -54,6 +54,7 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("jump") or buffer_timer < buffer_time and not jumped and can_move:
 		if is_on_floor() or coyote_timer < coyote_time:
+			AudioManager.play_sound(AudioManager.jump, 0.1)
 			velocity.y = -jump_velocity
 			sprite.scale(Vector2.ONE + Vector2(-stretch, stretch))
 			jumped = true

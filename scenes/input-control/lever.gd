@@ -11,6 +11,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and touching:
+		AudioManager.play_sound(AudioManager.lever, 0.2)
 		set_enabled(not enabled)
 		activate.emit(enabled)
 
