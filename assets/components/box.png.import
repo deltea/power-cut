@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gu8smib1m3vp"
-path="res://.godot/imported/switch-off.png-98f1eb31aeada60f951b02ceafc5ae02.ctex"
+uid="uid://dha6istn3v17m"
+path="res://.godot/imported/box.png-72ab4aa06bec814c513364c29b89f302.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/switch-off.png"
-dest_files=["res://.godot/imported/switch-off.png-98f1eb31aeada60f951b02ceafc5ae02.ctex"]
+source_file="res://assets/components/box.png"
+dest_files=["res://.godot/imported/box.png-72ab4aa06bec814c513364c29b89f302.ctex"]
 
 [params]
 

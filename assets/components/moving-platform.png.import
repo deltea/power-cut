@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g7rqo2ydbon5"
-path="res://.godot/imported/button-up.png-2c7589835a3cdedd817e2e6b789674db.ctex"
+uid="uid://bma63vaa6tu47"
+path="res://.godot/imported/moving-platform.png-e047ff3a9855534dd58148ca3bb3338f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/button-up.png"
-dest_files=["res://.godot/imported/button-up.png-2c7589835a3cdedd817e2e6b789674db.ctex"]
+source_file="res://assets/components/moving-platform.png"
+dest_files=["res://.godot/imported/moving-platform.png-e047ff3a9855534dd58148ca3bb3338f.ctex"]
 
 [params]
 

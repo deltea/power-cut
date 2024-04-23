@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://kvi2j4wq3m45"]
 
 [ext_resource type="PackedScene" uid="uid://dcdr6lakd0s6j" path="res://scenes/input-control/input_control.tscn" id="1_f7os6"]
-[ext_resource type="Texture2D" uid="uid://ck37fves7end5" path="res://assets/lever-on.png" id="2_chqrl"]
+[ext_resource type="Texture2D" uid="uid://ck37fves7end5" path="res://assets/input-controls/lever-on.png" id="2_chqrl"]
 [ext_resource type="Script" path="res://scenes/input-control/lever.gd" id="2_jmgw8"]
-[ext_resource type="Texture2D" uid="uid://rwuhj65iggqc" path="res://assets/lever-off.png" id="4_yng4n"]
-[ext_resource type="Texture2D" uid="uid://bb7tq0hqbmu5s" path="res://assets/lever-off-alt.png" id="5_gydyv"]
+[ext_resource type="Texture2D" uid="uid://rwuhj65iggqc" path="res://assets/input-controls/lever-off.png" id="4_yng4n"]
+[ext_resource type="Texture2D" uid="uid://bb7tq0hqbmu5s" path="res://assets/input-controls/lever-off-alt.png" id="5_gydyv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wuyi"]
 size = Vector2(30, 20)

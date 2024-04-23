@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dha6istn3v17m"
-path="res://.godot/imported/box.png-52cc4e41fddadef836f9ad4dbe7936fa.ctex"
+uid="uid://bhj243y1q2awb"
+path="res://.godot/imported/fading-platform-outline.png-64b47805454156e93c9d334f5a61fefd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/box.png"
-dest_files=["res://.godot/imported/box.png-52cc4e41fddadef836f9ad4dbe7936fa.ctex"]
+source_file="res://assets/components/fading-platform-outline.png"
+dest_files=["res://.godot/imported/fading-platform-outline.png-64b47805454156e93c9d334f5a61fefd.ctex"]
 
 [params]
 

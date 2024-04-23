@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu8aomehk1w1n"
-path="res://.godot/imported/exit-door.png-3c2f1bba7f715667730df0535a7a56ec.ctex"
+uid="uid://rwuhj65iggqc"
+path="res://.godot/imported/lever-off.png-3d464fa5fdd60ddcd75aa80522b53369.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/exit-door.png"
-dest_files=["res://.godot/imported/exit-door.png-3c2f1bba7f715667730df0535a7a56ec.ctex"]
+source_file="res://assets/input-controls/lever-off.png"
+dest_files=["res://.godot/imported/lever-off.png-3d464fa5fdd60ddcd75aa80522b53369.ctex"]
 
 [params]
 

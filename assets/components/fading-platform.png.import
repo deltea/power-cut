@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ck37fves7end5"
-path="res://.godot/imported/lever-on.png-648f83bcab64e978ed2fbdd9f8615fb2.ctex"
+uid="uid://cgu60mjxc301h"
+path="res://.godot/imported/fading-platform.png-d6703be1fbab08c56955299af0576936.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/lever-on.png"
-dest_files=["res://.godot/imported/lever-on.png-648f83bcab64e978ed2fbdd9f8615fb2.ctex"]
+source_file="res://assets/components/fading-platform.png"
+dest_files=["res://.godot/imported/fading-platform.png-d6703be1fbab08c56955299af0576936.ctex"]
 
 [params]
 

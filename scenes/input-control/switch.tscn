@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dcdr6lakd0s6j" path="res://scenes/input-control/input_control.tscn" id="1_c42fb"]
 [ext_resource type="Script" path="res://scenes/input-control/switch.gd" id="2_8lhw3"]
-[ext_resource type="Texture2D" uid="uid://b8ur4ljorttok" path="res://assets/switch-on.png" id="3_cshjv"]
-[ext_resource type="Texture2D" uid="uid://gu8smib1m3vp" path="res://assets/switch-off.png" id="4_q1bkm"]
+[ext_resource type="Texture2D" uid="uid://b8ur4ljorttok" path="res://assets/input-controls/switch-on.png" id="3_cshjv"]
+[ext_resource type="Texture2D" uid="uid://gu8smib1m3vp" path="res://assets/input-controls/switch-off.png" id="4_q1bkm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2cche"]
 size = Vector2(32, 32)

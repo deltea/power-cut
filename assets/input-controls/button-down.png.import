@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgu60mjxc301h"
-path="res://.godot/imported/fading-platform.png-6005c7add42a2fe3731c84451a8639d9.ctex"
+uid="uid://7nea8v5opjlf"
+path="res://.godot/imported/button-down.png-eb2518c029f0ff69cd71b92e28582f54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fading-platform.png"
-dest_files=["res://.godot/imported/fading-platform.png-6005c7add42a2fe3731c84451a8639d9.ctex"]
+source_file="res://assets/input-controls/button-down.png"
+dest_files=["res://.godot/imported/button-down.png-eb2518c029f0ff69cd71b92e28582f54.ctex"]
 
 [params]
 

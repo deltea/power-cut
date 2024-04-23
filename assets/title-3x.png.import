@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0fve0hsbwi5b"
-path="res://.godot/imported/trampoline.png-5bfee3278e9ba7a6a4c68ca67687faca.ctex"
+uid="uid://cqltu6hbl873f"
+path="res://.godot/imported/title-3x.png-9219a1f8d21ebe9d19afb76ffba7e859.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/trampoline.png"
-dest_files=["res://.godot/imported/trampoline.png-5bfee3278e9ba7a6a4c68ca67687faca.ctex"]
+source_file="res://assets/title-3x.png"
+dest_files=["res://.godot/imported/title-3x.png-9219a1f8d21ebe9d19afb76ffba7e859.ctex"]
 
 [params]
 

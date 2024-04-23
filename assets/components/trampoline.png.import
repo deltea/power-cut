@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb7tq0hqbmu5s"
-path="res://.godot/imported/lever-off-alt.png-3956efcc0c4211e07bdc4c973966edba.ctex"
+uid="uid://0fve0hsbwi5b"
+path="res://.godot/imported/trampoline.png-8a9b812cb17dc14be95e1030c851a393.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/lever-off-alt.png"
-dest_files=["res://.godot/imported/lever-off-alt.png-3956efcc0c4211e07bdc4c973966edba.ctex"]
+source_file="res://assets/components/trampoline.png"
+dest_files=["res://.godot/imported/trampoline.png-8a9b812cb17dc14be95e1030c851a393.ctex"]
 
 [params]
 
