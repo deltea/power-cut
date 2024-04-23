@@ -84,16 +84,20 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("left"): input -= 1
 	if Input.is_action_just_pressed("right"): input += 1
 
-	if input: update_selection(input)
+	if input:
+		AudioManager.play_sound(AudioManager.level_selection)
+		update_selection(input)
 
 	if Input.is_action_just_pressed("interact") or Input.is_action_just_pressed("jump"):
 		select_circles[index].press()
 
 		if select_circles[index].locked:
+			AudioManager.play_sound(AudioManager.level_locked)
 			camera.shake(0.1, 2)
 		elif select_circles[index] is SettingsSelectCircle:
 			print("ye")
 		elif select_circles[index] is WinSelectCircle:
 			select_circles[index].confetti_explosion()
 		else:
+			AudioManager.play_sound(AudioManager.level_selected)
 			RoomManager.play_level(select_circles[index].level_resource)
