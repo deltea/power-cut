@@ -13,6 +13,7 @@ func _process(_delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
+		AudioManager.play_sound(AudioManager.winning)
 		Globals.player.win(self)
 		await Clock.wait(1.0)
 		RoomManager.finish_level()

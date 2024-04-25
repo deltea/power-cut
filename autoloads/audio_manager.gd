@@ -15,6 +15,7 @@ var trampoline = preload("res://assets/sfx/trampoline.wav")
 var win = preload("res://assets/sfx/win.wav")
 var box = preload("res://assets/sfx/box.wav")
 var restart = preload("res://assets/sfx/restart.wav")
+var winning = preload("res://assets/sfx/winning.wav")
 
 func play_music(music: AudioStream):
 	music_player.stream = music
