@@ -19,6 +19,7 @@ _data = {
 point_count = 7
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_205qa"]
+friction = 0.5
 bounce = 0.6
 
 [node name="Level10" instance=ExtResource("1_qk3ls")]
