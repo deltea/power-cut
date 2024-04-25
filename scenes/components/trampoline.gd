@@ -2,6 +2,7 @@ class_name Trampoline extends Area2D
 
 @export var force = 500.0
 @export var control: InputControl
+@export var inverted = false
 
 @onready var sprite: Sprite = $Sprite
 
@@ -21,6 +22,6 @@ func _on_body_entered(body: Node2D) -> void:
 		Globals.player.trampolined(force)
 
 func _on_activate(value: bool):
-	enabled = value
-	sprite.self_modulate = Color.RED if value else Color.WHITE
+	enabled = not value if inverted else value
+	sprite.self_modulate = Color.RED if enabled else Color.WHITE
 	sprite.scale(Vector2(1.2, 1.2))

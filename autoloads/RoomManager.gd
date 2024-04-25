@@ -14,6 +14,8 @@ var level_5_room: PackedScene = preload("res://rooms/levels/level_5.tscn")
 var level_6_room: PackedScene = preload("res://rooms/levels/level_6.tscn")
 var level_7_room: PackedScene = preload("res://rooms/levels/level_7.tscn")
 var level_8_room: PackedScene = preload("res://rooms/levels/level_8.tscn")
+var level_9_room: PackedScene = preload("res://rooms/levels/level_9.tscn")
+var level_10_room: PackedScene = preload("res://rooms/levels/level_10.tscn")
 
 var current_room: Room
 var transitioning = false

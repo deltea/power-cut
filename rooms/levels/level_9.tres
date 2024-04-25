@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=3 format=3 uid="uid://cn1f3vv5li5j2"]
+
+[ext_resource type="Resource" uid="uid://d2gme41fwyqgh" path="res://color-palettes/neon.tres" id="1_h3h5f"]
+[ext_resource type="Script" path="res://scripts/level_resource.gd" id="2_1c5a6"]
+
+[resource]
+script = ExtResource("2_1c5a6")
+name = "Stuff"
+color_palette = ExtResource("1_h3h5f")

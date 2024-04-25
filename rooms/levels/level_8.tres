@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource("2_wcb0j")
-name = "Alternating"
+name = "Verticality"
 color_palette = ExtResource("1_5t0cu")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://uqdq7qwompw0"]
+[gd_scene load_steps=25 format=3 uid="uid://uqdq7qwompw0"]
 
 [ext_resource type="Script" path="res://rooms/level_select_room.gd" id="1_bxplm"]
 [ext_resource type="Resource" uid="uid://8dniq85peocx" path="res://color-palettes/bumblebit.tres" id="2_7cn1l"]
@@ -17,7 +17,9 @@
 [ext_resource type="Resource" uid="uid://bqwbxbqkch3b8" path="res://rooms/levels/level_8.tres" id="14_vcpx8"]
 [ext_resource type="FontFile" uid="uid://cchy2jc4rwkr0" path="res://assets/fonts/hefty-me.ttf" id="14_vnl8i"]
 [ext_resource type="Texture2D" uid="uid://g3fj55jkpw2i" path="res://assets/ui/arrow.png" id="15_ade77"]
+[ext_resource type="Resource" uid="uid://cn1f3vv5li5j2" path="res://rooms/levels/level_9.tres" id="15_gvyeg"]
 [ext_resource type="Resource" uid="uid://bkt4ydpwq3a25" path="res://color-palettes/peachy.tres" id="16_b37lt"]
+[ext_resource type="Resource" uid="uid://3x4y6tnx8xv6" path="res://rooms/levels/level_10.tres" id="16_cjbqu"]
 [ext_resource type="Script" path="res://scripts/level_resource.gd" id="16_uch6y"]
 
 [sub_resource type="Resource" id="Resource_xwxbj"]
@@ -38,7 +40,8 @@ font = ExtResource("14_vnl8i")
 script = ExtResource("1_bxplm")
 camera_dynamics = SubResource("Resource_xwxbj")
 select_circles_parent = NodePath("LevelSelectCircles")
-stars_box = Vector2(2500, 500)
+stars_amount = 100
+stars_box = Vector2(5000, 500)
 color_palette = ExtResource("2_7cn1l")
 limit_x = 10000
 limit_y = 10000
@@ -96,8 +99,18 @@ position = Vector2(1115, -133)
 level_resource = ExtResource("14_vcpx8")
 num = 8
 
+[node name="LevelSelectCircle9" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
+position = Vector2(1256, -51)
+level_resource = ExtResource("15_gvyeg")
+num = 9
+
+[node name="LevelSelectCircle10" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
+position = Vector2(1581, -51)
+level_resource = ExtResource("16_cjbqu")
+num = 10
+
 [node name="WinSelectCircle" parent="LevelSelectCircles" instance=ExtResource("13_pklqh")]
-position = Vector2(1324, -117)
+position = Vector2(1723, -51)
 level_resource = SubResource("Resource_pxt3e")
 
 [node name="Instructions" type="Label" parent="."]

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="LevelResource" load_steps=3 format=3 uid="uid://3x4y6tnx8xv6"]
+
+[ext_resource type="Resource" uid="uid://dpkminsljnx36" path="res://color-palettes/soft_serve.tres" id="1_6c7wu"]
+[ext_resource type="Script" path="res://scripts/level_resource.gd" id="2_yclvv"]
+
+[resource]
+script = ExtResource("2_yclvv")
+name = "Finale"
+color_palette = ExtResource("1_6c7wu")
