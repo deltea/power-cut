@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource("2_1c5a6")
-name = "Stuff"
+name = "Loops"
 color_palette = ExtResource("1_h3h5f")

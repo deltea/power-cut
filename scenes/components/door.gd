@@ -21,6 +21,8 @@ func _ready() -> void:
 	if control:
 		control.activate.connect(_on_activate)
 		_on_activate(control.enabled)
+	else:
+		_on_activate(false)
 
 func _on_activate(value: bool):
 	open = value if inverted else not value

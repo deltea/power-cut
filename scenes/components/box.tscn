@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dha6istn3v17m" path="res://assets/components/box.png" id="2_k1a0c"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u6wdw"]
-friction = 0.0
 bounce = 0.6
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_araka"]

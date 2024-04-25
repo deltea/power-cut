@@ -100,17 +100,17 @@ level_resource = ExtResource("14_vcpx8")
 num = 8
 
 [node name="LevelSelectCircle9" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
-position = Vector2(1256, -51)
+position = Vector2(1266, -51)
 level_resource = ExtResource("15_gvyeg")
 num = 9
 
 [node name="LevelSelectCircle10" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
-position = Vector2(1581, -51)
+position = Vector2(1599, -51)
 level_resource = ExtResource("16_cjbqu")
 num = 10
 
 [node name="WinSelectCircle" parent="LevelSelectCircles" instance=ExtResource("13_pklqh")]
-position = Vector2(1723, -51)
+position = Vector2(1755, -51)
 level_resource = SubResource("Resource_pxt3e")
 
 [node name="Instructions" type="Label" parent="."]
