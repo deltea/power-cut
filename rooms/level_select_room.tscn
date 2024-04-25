@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://uqdq7qwompw0"]
 
 [ext_resource type="Script" path="res://rooms/level_select_room.gd" id="1_bxplm"]
-[ext_resource type="Resource" path="res://color-palettes/bumblebit.tres" id="2_7cn1l"]
+[ext_resource type="Resource" uid="uid://8dniq85peocx" path="res://color-palettes/bumblebit.tres" id="2_7cn1l"]
 [ext_resource type="Script" path="res://utils/dynamics/dynamics_resource.gd" id="2_nwmo1"]
 [ext_resource type="Resource" uid="uid://bk6a10vhvtxlo" path="res://rooms/levels/level_1.tres" id="3_25x6q"]
 [ext_resource type="Resource" uid="uid://bydkfhqtqtrfw" path="res://rooms/levels/level_2.tres" id="4_isqk8"]
@@ -16,8 +16,8 @@
 [ext_resource type="Resource" uid="uid://c0ufnxjkx2qbb" path="res://rooms/levels/level_7.tres" id="14_753jc"]
 [ext_resource type="Resource" uid="uid://bqwbxbqkch3b8" path="res://rooms/levels/level_8.tres" id="14_vcpx8"]
 [ext_resource type="FontFile" uid="uid://cchy2jc4rwkr0" path="res://assets/fonts/hefty-me.ttf" id="14_vnl8i"]
-[ext_resource type="Resource" uid="uid://dcp07b8xi7lwc" path="res://color-palettes/crimson.tres" id="15_17tl0"]
 [ext_resource type="Texture2D" uid="uid://g3fj55jkpw2i" path="res://assets/ui/arrow.png" id="15_ade77"]
+[ext_resource type="Resource" uid="uid://bkt4ydpwq3a25" path="res://color-palettes/peachy.tres" id="16_b37lt"]
 [ext_resource type="Script" path="res://scripts/level_resource.gd" id="16_uch6y"]
 
 [sub_resource type="Resource" id="Resource_xwxbj"]
@@ -28,8 +28,8 @@ r = 2.0
 
 [sub_resource type="Resource" id="Resource_pxt3e"]
 script = ExtResource("16_uch6y")
-name = "Level Name"
-color_palette = ExtResource("15_17tl0")
+name = "You Win!"
+color_palette = ExtResource("16_b37lt")
 
 [sub_resource type="LabelSettings" id="LabelSettings_oc65g"]
 font = ExtResource("14_vnl8i")

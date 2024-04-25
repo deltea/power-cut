@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="LevelResource" load_steps=3 format=3 uid="uid://cxr05agifm1k0"]
 
-[ext_resource type="Resource" path="res://color-palettes/dnot_forget.tres" id="1_a842u"]
+[ext_resource type="Resource" uid="uid://dio8ap0b748w1" path="res://color-palettes/dnot_forget.tres" id="1_a842u"]
 [ext_resource type="Script" path="res://scripts/level_resource.gd" id="1_d2oq1"]
 
 [resource]

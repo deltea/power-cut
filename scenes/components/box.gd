@@ -9,4 +9,4 @@ func _process(_delta: float) -> void:
 	linear_damp = drag if len(bodies) > 0 else 0.0
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
-	AudioManager.play_sound(AudioManager.box)
+	AudioManager.play_sound(AudioManager.box, 0.1)

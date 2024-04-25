@@ -8,7 +8,7 @@ func _process(_delta: float) -> void:
 	enabled = len(touching) > 0
 
 	if enabled != enabled_prev:
-		AudioManager.play_sound(AudioManager.lever, 0.2)
+		AudioManager.play_sound(AudioManager.lever, 0.4)
 		activate.emit(enabled)
 		sprite.texture = enabled_texture if enabled else disabled_texture
 		Globals.camera.shake(0.05, 1)

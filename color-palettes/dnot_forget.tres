@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ColorPaletteResource" load_steps=2 format=3 uid="uid://bdlcf2pydcano"]
+[gd_resource type="Resource" script_class="ColorPaletteResource" load_steps=2 format=3 uid="uid://dio8ap0b748w1"]
 
 [ext_resource type="Script" path="res://scripts/color_palette_resource.gd" id="1_dm451"]
 

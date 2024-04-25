@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource("2_m3c0f")
-name = "Train"
+name = "Bus"
 color_palette = ExtResource("1_cef6h")

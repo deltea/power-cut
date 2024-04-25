@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ColorPaletteResource" load_steps=2 format=3 uid="uid://bysc41di37dy5"]
+
+[ext_resource type="Script" path="res://scripts/color_palette_resource.gd" id="1_sbro0"]
+
+[resource]
+script = ExtResource("1_sbro0")
+primary = Color(0.941176, 0.815686, 0.388235, 1)
+secondary = Color(0.815686, 0.458824, 0.717647, 1)
+dark = Color(0.266667, 0.176471, 0.431373, 1)
+light = Color(1, 1, 1, 1)

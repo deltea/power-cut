@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="LevelResource" load_steps=3 format=3 uid="uid://bqwbxbqkch3b8"]
 
-[ext_resource type="Resource" path="res://color-palettes/dnot_forget.tres" id="1_8obew"]
+[ext_resource type="Resource" uid="uid://bysc41di37dy5" path="res://color-palettes/dream_candy.tres" id="1_5t0cu"]
 [ext_resource type="Script" path="res://scripts/level_resource.gd" id="2_wcb0j"]
 
 [resource]
 script = ExtResource("2_wcb0j")
-name = "Thingy"
-color_palette = ExtResource("1_8obew")
+name = "Alternating"
+color_palette = ExtResource("1_5t0cu")
