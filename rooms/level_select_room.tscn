@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://uqdq7qwompw0"]
+[gd_scene load_steps=32 format=3 uid="uid://uqdq7qwompw0"]
 
 [ext_resource type="Script" path="res://rooms/level_select_room.gd" id="1_bxplm"]
 [ext_resource type="Resource" uid="uid://8dniq85peocx" path="res://color-palettes/bumblebit.tres" id="2_7cn1l"]
@@ -17,18 +17,30 @@
 [ext_resource type="Resource" uid="uid://c0ufnxjkx2qbb" path="res://rooms/levels/level_7.tres" id="14_753jc"]
 [ext_resource type="Resource" uid="uid://bqwbxbqkch3b8" path="res://rooms/levels/level_8.tres" id="14_vcpx8"]
 [ext_resource type="FontFile" uid="uid://cchy2jc4rwkr0" path="res://assets/fonts/hefty-me.ttf" id="14_vnl8i"]
-[ext_resource type="Texture2D" uid="uid://g3fj55jkpw2i" path="res://assets/ui/arrow.png" id="15_ade77"]
 [ext_resource type="Resource" uid="uid://cn1f3vv5li5j2" path="res://rooms/levels/level_9.tres" id="15_gvyeg"]
 [ext_resource type="Resource" uid="uid://bkt4ydpwq3a25" path="res://color-palettes/peachy.tres" id="16_b37lt"]
 [ext_resource type="Resource" uid="uid://3x4y6tnx8xv6" path="res://rooms/levels/level_10.tres" id="16_cjbqu"]
 [ext_resource type="Script" path="res://scripts/level_resource.gd" id="16_uch6y"]
 [ext_resource type="PackedScene" uid="uid://dd3l3uf4cf230" path="res://scenes/ui/volume_select_circle.tscn" id="20_3fwr8"]
+[ext_resource type="PackedScene" uid="uid://ba5ykayuug1ep" path="res://scenes/ui/github_select_circle.tscn" id="22_wvi7n"]
 
 [sub_resource type="Resource" id="Resource_xwxbj"]
 script = ExtResource("2_nwmo1")
 f = 2.0
 z = 0.5
 r = 2.0
+
+[sub_resource type="Resource" id="Resource_6mw8a"]
+script = ExtResource("7_di38v")
+primary = Color(0.266667, 0.576471, 0.972549, 1)
+secondary = Color(0.266667, 0.576471, 0.972549, 1)
+dark = Color(0, 0, 0, 1)
+light = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Resource_ojvqi"]
+script = ExtResource("16_uch6y")
+name = "GitHub"
+color_palette = SubResource("Resource_6mw8a")
 
 [sub_resource type="Resource" id="Resource_aguot"]
 script = ExtResource("7_di38v")
@@ -49,6 +61,10 @@ color_palette = ExtResource("16_b37lt")
 
 [sub_resource type="LabelSettings" id="LabelSettings_oc65g"]
 font = ExtResource("14_vnl8i")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ar02e"]
+font = ExtResource("14_vnl8i")
+font_color = Color(1, 0, 0, 1)
 
 [node name="LevelSelectRoom" type="Node2D" node_paths=PackedStringArray("select_circles_parent")]
 script = ExtResource("1_bxplm")
@@ -72,8 +88,12 @@ texture = ExtResource("5_7t63a")
 
 [node name="LevelSelectCircles" type="Node2D" parent="."]
 
+[node name="GithubSelectCircle" parent="LevelSelectCircles" instance=ExtResource("22_wvi7n")]
+position = Vector2(-363, 0)
+level_resource = SubResource("Resource_ojvqi")
+
 [node name="VolumeSelectCircle" parent="LevelSelectCircles" instance=ExtResource("20_3fwr8")]
-position = Vector2(-171, 0)
+position = Vector2(-266, 0)
 level_resource = SubResource("Resource_y4wm7")
 
 [node name="LevelSelectCircle" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
@@ -81,52 +101,52 @@ level_resource = ExtResource("3_25x6q")
 num = 1
 
 [node name="LevelSelectCircle2" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
-position = Vector2(175, -16)
+position = Vector2(266, 0)
 level_resource = ExtResource("4_isqk8")
 num = 2
 
 [node name="LevelSelectCircle3" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
-position = Vector2(322, -96)
+position = Vector2(413, -96)
 level_resource = ExtResource("5_y15hj")
 num = 3
 
 [node name="LevelSelectCircle4" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
-position = Vector2(484, -165)
+position = Vector2(575, -165)
 level_resource = ExtResource("6_iv7df")
 num = 4
 
 [node name="LevelSelectCircle5" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
-position = Vector2(619, -51)
+position = Vector2(710, -51)
 level_resource = ExtResource("7_4i1jh")
 num = 5
 
 [node name="LevelSelectCircle6" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
-position = Vector2(825, -32)
+position = Vector2(916, -32)
 level_resource = ExtResource("8_63bjs")
 num = 6
 
 [node name="LevelSelectCircle7" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
-position = Vector2(977, -26)
+position = Vector2(1068, -26)
 level_resource = ExtResource("14_753jc")
 num = 7
 
 [node name="LevelSelectCircle8" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
-position = Vector2(1115, -133)
+position = Vector2(1206, -133)
 level_resource = ExtResource("14_vcpx8")
 num = 8
 
 [node name="LevelSelectCircle9" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
-position = Vector2(1266, -51)
+position = Vector2(1357, -51)
 level_resource = ExtResource("15_gvyeg")
 num = 9
 
 [node name="LevelSelectCircle10" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
-position = Vector2(1599, -51)
+position = Vector2(1690, -51)
 level_resource = ExtResource("16_cjbqu")
 num = 10
 
 [node name="WinSelectCircle" parent="LevelSelectCircles" instance=ExtResource("13_pklqh")]
-position = Vector2(1755, -51)
+position = Vector2(1846, -51)
 level_resource = SubResource("Resource_pxt3e")
 
 [node name="Instructions" type="Label" parent="."]
@@ -141,19 +161,10 @@ offset_right = -38.0
 offset_bottom = 97.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "        /        to move"
+text = "<  /  >  to move"
 label_settings = SubResource("LabelSettings_oc65g")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="LeftIcon" type="Sprite2D" parent="Instructions"]
-position = Vector2(16, 14)
-texture = ExtResource("15_ade77")
-
-[node name="RightIcon" type="Sprite2D" parent="Instructions"]
-position = Vector2(38, 14)
-texture = ExtResource("15_ade77")
-flip_h = true
 
 [node name="Instructions2" type="Label" parent="."]
 anchors_preset = 7
@@ -167,7 +178,23 @@ offset_right = 135.0
 offset_bottom = 97.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "z/x  to select"
+text = "z / x  to select"
 label_settings = SubResource("LabelSettings_oc65g")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sign" type="Label" parent="."]
+offset_left = -149.0
+offset_top = 6.0
+offset_right = -103.0
+offset_bottom = 20.0
+text = "<  Settings"
+label_settings = SubResource("LabelSettings_ar02e")
+
+[node name="Sign2" type="Label" parent="."]
+offset_left = 100.0
+offset_top = 6.0
+offset_right = 146.0
+offset_bottom = 20.0
+text = "Levels  >"
+label_settings = SubResource("LabelSettings_ar02e")
