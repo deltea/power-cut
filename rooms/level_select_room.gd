@@ -6,7 +6,7 @@ class_name LevelSelect extends Room
 @export var stars_parallax = 0.8
 @export var stars_amount = 100
 @export var stars_box: Vector2 = Vector2(5000, 500)
-@export var level_offset = 3
+@export var level_offset = 4
 
 @onready var camera: Camera = $Camera
 @onready var stars: Node2D = $Stars
@@ -57,7 +57,7 @@ func _ready() -> void:
 	# Adding the stars
 	for j in range(stars_amount):
 		var star = star_scene.instantiate() as Sprite2D
-		var x = randf_range(-650, stars_box.x)
+		var x = randf_range(-700, stars_box.x)
 		var y = randf_range(-stars_box.y / 2, stars_box.y / 2)
 		star.position = Vector2(x - 240, y)
 		stars.add_child(star)
@@ -106,6 +106,10 @@ func _process(_delta: float) -> void:
 			AudioManager.play_sound(AudioManager.lever, 0.2)
 			var fullscreen = toggle_fullscreen()
 			select_circles[index].title_label.text = "Yes" if fullscreen else "No"
+		elif select_circles[index] is DeleteSelectCircle:
+			AudioManager.play_sound(AudioManager.lever, 0.2)
+			RoomManager.save_level(0)
+			RoomManager.change_room("level_select")
 		else:
 			AudioManager.play_sound(AudioManager.level_selected)
 			RoomManager.play_level(select_circles[index].level_resource)

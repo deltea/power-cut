@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://uqdq7qwompw0"]
+[gd_scene load_steps=38 format=3 uid="uid://uqdq7qwompw0"]
 
 [ext_resource type="Script" path="res://rooms/level_select_room.gd" id="1_bxplm"]
 [ext_resource type="Resource" uid="uid://8dniq85peocx" path="res://color-palettes/bumblebit.tres" id="2_7cn1l"]
@@ -24,12 +24,25 @@
 [ext_resource type="PackedScene" uid="uid://dd3l3uf4cf230" path="res://scenes/ui/volume_select_circle.tscn" id="20_3fwr8"]
 [ext_resource type="PackedScene" uid="uid://ba5ykayuug1ep" path="res://scenes/ui/github_select_circle.tscn" id="22_wvi7n"]
 [ext_resource type="PackedScene" uid="uid://cloitv0bbl858" path="res://scenes/ui/fullscreen_select_circle.tscn" id="23_1ve7c"]
+[ext_resource type="PackedScene" uid="uid://dhtrrqny2a0fw" path="res://scenes/ui/delete_select_circle.tscn" id="24_fdxvt"]
 
 [sub_resource type="Resource" id="Resource_xwxbj"]
 script = ExtResource("2_nwmo1")
 f = 2.0
 z = 0.5
 r = 2.0
+
+[sub_resource type="Resource" id="Resource_qps2w"]
+script = ExtResource("7_di38v")
+primary = Color(1, 0, 0, 1)
+secondary = Color(1, 0, 0, 1)
+dark = Color(0, 0, 0, 1)
+light = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Resource_ir0eb"]
+script = ExtResource("16_uch6y")
+name = "Delete Data"
+color_palette = SubResource("Resource_qps2w")
 
 [sub_resource type="Resource" id="Resource_6mw8a"]
 script = ExtResource("7_di38v")
@@ -57,8 +70,8 @@ color_palette = SubResource("Resource_84h73")
 
 [sub_resource type="Resource" id="Resource_aguot"]
 script = ExtResource("7_di38v")
-primary = Color(1, 0, 0, 1)
-secondary = Color(1, 0, 0, 1)
+primary = Color(0.8, 0, 1, 1)
+secondary = Color(0.8, 0, 1, 1)
 dark = Color(0, 0, 0, 1)
 light = Color(1, 1, 1, 1)
 
@@ -100,6 +113,10 @@ position = Vector2(6, -85)
 texture = ExtResource("5_7t63a")
 
 [node name="LevelSelectCircles" type="Node2D" parent="."]
+
+[node name="DeleteSelectCircle" parent="LevelSelectCircles" instance=ExtResource("24_fdxvt")]
+position = Vector2(-635, 0)
+level_resource = SubResource("Resource_ir0eb")
 
 [node name="GithubSelectCircle" parent="LevelSelectCircles" instance=ExtResource("22_wvi7n")]
 position = Vector2(-457, 0)
