@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cloitv0bbl858"]
+
+[ext_resource type="PackedScene" uid="uid://cnmr7rmu2r1wb" path="res://scenes/ui/level_select_circle.tscn" id="1_x18hb"]
+[ext_resource type="Script" path="res://scenes/ui/fullscreen_select_circle.gd" id="2_rhj4k"]
+[ext_resource type="Texture2D" uid="uid://3ho7rp85a6be" path="res://assets/ui/fullscreen-icon.png" id="3_bfspe"]
+
+[node name="FullscreenSelectCircle" instance=ExtResource("1_x18hb")]
+script = ExtResource("2_rhj4k")
+
+[node name="Title" parent="Sprite" index="1"]
+text = "No"
+
+[node name="Num" parent="Sprite" index="2"]
+visible = false
+
+[node name="Locked" parent="Sprite" index="6"]
+visible = false
+
+[node name="FullscreenIcon" type="Sprite2D" parent="Sprite" index="7"]
+texture = ExtResource("3_bfspe")

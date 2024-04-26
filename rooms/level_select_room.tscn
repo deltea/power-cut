@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://uqdq7qwompw0"]
+[gd_scene load_steps=35 format=3 uid="uid://uqdq7qwompw0"]
 
 [ext_resource type="Script" path="res://rooms/level_select_room.gd" id="1_bxplm"]
 [ext_resource type="Resource" uid="uid://8dniq85peocx" path="res://color-palettes/bumblebit.tres" id="2_7cn1l"]
@@ -23,6 +23,7 @@
 [ext_resource type="Script" path="res://scripts/level_resource.gd" id="16_uch6y"]
 [ext_resource type="PackedScene" uid="uid://dd3l3uf4cf230" path="res://scenes/ui/volume_select_circle.tscn" id="20_3fwr8"]
 [ext_resource type="PackedScene" uid="uid://ba5ykayuug1ep" path="res://scenes/ui/github_select_circle.tscn" id="22_wvi7n"]
+[ext_resource type="PackedScene" uid="uid://cloitv0bbl858" path="res://scenes/ui/fullscreen_select_circle.tscn" id="23_1ve7c"]
 
 [sub_resource type="Resource" id="Resource_xwxbj"]
 script = ExtResource("2_nwmo1")
@@ -41,6 +42,18 @@ light = Color(1, 1, 1, 1)
 script = ExtResource("16_uch6y")
 name = "GitHub"
 color_palette = SubResource("Resource_6mw8a")
+
+[sub_resource type="Resource" id="Resource_84h73"]
+script = ExtResource("7_di38v")
+primary = Color(0.2408, 0.86, 0.2924, 1)
+secondary = Color(0.239216, 0.858824, 0.294118, 1)
+dark = Color(0, 0, 0, 1)
+light = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Resource_8jcbu"]
+script = ExtResource("16_uch6y")
+name = "Fullscreen"
+color_palette = SubResource("Resource_84h73")
 
 [sub_resource type="Resource" id="Resource_aguot"]
 script = ExtResource("7_di38v")
@@ -89,8 +102,12 @@ texture = ExtResource("5_7t63a")
 [node name="LevelSelectCircles" type="Node2D" parent="."]
 
 [node name="GithubSelectCircle" parent="LevelSelectCircles" instance=ExtResource("22_wvi7n")]
-position = Vector2(-363, 0)
+position = Vector2(-457, 0)
 level_resource = SubResource("Resource_ojvqi")
+
+[node name="FullscreenSelectCircle" parent="LevelSelectCircles" instance=ExtResource("23_1ve7c")]
+position = Vector2(-360, 0)
+level_resource = SubResource("Resource_8jcbu")
 
 [node name="VolumeSelectCircle" parent="LevelSelectCircles" instance=ExtResource("20_3fwr8")]
 position = Vector2(-266, 0)
@@ -106,7 +123,7 @@ level_resource = ExtResource("4_isqk8")
 num = 2
 
 [node name="LevelSelectCircle3" parent="LevelSelectCircles" instance=ExtResource("5_v3cet")]
-position = Vector2(413, -96)
+position = Vector2(406, -68)
 level_resource = ExtResource("5_y15hj")
 num = 3
 

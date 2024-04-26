@@ -6,7 +6,7 @@ class_name LevelSelect extends Room
 @export var stars_parallax = 0.8
 @export var stars_amount = 100
 @export var stars_box: Vector2 = Vector2(5000, 500)
-@export var level_offset = 2
+@export var level_offset = 3
 
 @onready var camera: Camera = $Camera
 @onready var stars: Node2D = $Stars
@@ -96,10 +96,24 @@ func _process(_delta: float) -> void:
 			AudioManager.play_sound(AudioManager.win)
 			select_circles[index].confetti_explosion()
 		elif select_circles[index] is VolumeSelectCircle:
+			AudioManager.play_sound(AudioManager.lever, 0.2)
 			AudioManager.change_volume()
 			select_circles[index].title_label.text = str(AudioManager.volume) + "%"
 		elif select_circles[index] is GithubSelectCircle:
+			AudioManager.play_sound(AudioManager.lever, 0.2)
 			OS.shell_open("https://github.com/thcheetah777/power-cut")
+		elif select_circles[index] is FullscreenSelectCircle:
+			AudioManager.play_sound(AudioManager.lever, 0.2)
+			var fullscreen = toggle_fullscreen()
+			select_circles[index].title_label.text = "Yes" if fullscreen else "No"
 		else:
 			AudioManager.play_sound(AudioManager.level_selected)
 			RoomManager.play_level(select_circles[index].level_resource)
+
+func toggle_fullscreen() -> bool:
+	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		return false
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		return true
