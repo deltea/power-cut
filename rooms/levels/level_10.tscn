@@ -19,7 +19,7 @@ _data = {
 point_count = 7
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_205qa"]
-friction = 0.5
+friction = 0.6
 bounce = 0.6
 
 [node name="Level10" instance=ExtResource("1_qk3ls")]
@@ -67,13 +67,7 @@ inverted = true
 [node name="MovingPlatform" parent="Components" index="5" instance=ExtResource("6_t3jrc")]
 position = Vector2(-124, 0)
 curve = SubResource("Curve2D_nu5gq")
-
-[node name="PathFollow2D" parent="Components/MovingPlatform" index="0"]
-position = Vector2(-5, 168)
-
-[node name="Trampoline" parent="Components/MovingPlatform/PathFollow2D" index="0" node_paths=PackedStringArray("control") instance=ExtResource("7_38i3g")]
-position = Vector2(0, -7)
-control = NodePath("../../../Button2")
+platform_speed = 60.0
 
 [node name="Box2" parent="Components" index="6" instance=ExtResource("8_7q4h8")]
 position = Vector2(-129, -92)
@@ -93,18 +87,19 @@ power_line = NodePath("PowerLine")
 points = PackedVector2Array(0, 4, 0, 14, 70, 14, 70, -96, -350, -96, -350, 49, -303, 49)
 
 [node name="Button2" parent="Components" index="9" node_paths=PackedStringArray("power_line") instance=ExtResource("9_4audu")]
-position = Vector2(94, 192)
+position = Vector2(152, 192)
 power_line = NodePath("PowerLine")
 
 [node name="PowerLine" parent="Components/Button2" index="2" instance=ExtResource("10_aebdr")]
-points = PackedVector2Array(0, 4, 0, 17, -46, 17, -46, -76, -58, -76)
+points = PackedVector2Array(0, 4, 0, 17, -103, 17, -103, -76, -116, -76)
 
 [node name="Box" parent="Components" index="10" instance=ExtResource("8_7q4h8")]
 position = Vector2(0, -53)
 physics_material_override = SubResource("PhysicsMaterial_205qa")
 
 [node name="Lever" parent="Components" index="11" instance=ExtResource("9_pjba8")]
-position = Vector2(168, 192)
+position = Vector2(192, 169)
+rotation = -1.57079
 
 [node name="Button3" parent="Components" index="12" node_paths=PackedStringArray("power_line") instance=ExtResource("9_4audu")]
 position = Vector2(-163, 192)
@@ -117,4 +112,6 @@ points = PackedVector2Array(0, 4, 0, 16, 115, 16, 115, -65, 127, -65, 115, -65, 
 position = Vector2(-88, 192)
 control = NodePath("../Button3")
 
-[editable path="Components/MovingPlatform"]
+[node name="Trampoline2" parent="Components" index="14" node_paths=PackedStringArray("control") instance=ExtResource("7_38i3g")]
+position = Vector2(88, 192)
+control = NodePath("../Button2")
