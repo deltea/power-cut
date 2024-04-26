@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd3l3uf4cf230"]
+
+[ext_resource type="PackedScene" uid="uid://cnmr7rmu2r1wb" path="res://scenes/ui/level_select_circle.tscn" id="1_v6vkh"]
+[ext_resource type="Script" path="res://scenes/ui/volume_select_circle.gd" id="2_oc23a"]
+[ext_resource type="Texture2D" uid="uid://djumltj3f6hrn" path="res://assets/ui/volume-icon.png" id="3_mhleo"]
+
+[node name="VolumeSelectCircle" instance=ExtResource("1_v6vkh")]
+script = ExtResource("2_oc23a")
+
+[node name="Title" parent="Sprite" index="1"]
+text = "100%"
+
+[node name="Num" parent="Sprite" index="2"]
+visible = false
+
+[node name="Locked" parent="Sprite" index="6"]
+visible = false
+
+[node name="VolumeIcon" type="Sprite2D" parent="Sprite" index="7"]
+texture = ExtResource("3_mhleo")

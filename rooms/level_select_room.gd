@@ -4,8 +4,9 @@ class_name LevelSelect extends Room
 @export var select_circles_parent: Node2D
 @export var dotted_line_padding = 30.0
 @export var stars_parallax = 0.8
-@export var stars_amount = 50
-@export var stars_box: Vector2 = Vector2(1920, 540)
+@export var stars_amount = 100
+@export var stars_box: Vector2 = Vector2(5000, 500)
+@export var level_offset = 1
 
 @onready var camera: Camera = $Camera
 @onready var stars: Node2D = $Stars
@@ -16,11 +17,10 @@ var camera_target_position = Vector2.ZERO
 var select_circles: Array[LevelSelectCircle] = []
 var dotted_line_scene = preload("res://scenes/dotted_line.tscn")
 var star_scene = preload("res://scenes/star.tscn")
-var settings_select_circle_scene = preload("res://scenes/ui/settings_select_circle.tscn")
 
 func _ready() -> void:
 	var level = RoomManager.load_level()
-	index = level
+	index = level + level_offset
 
 	# AudioManager.play_music(AudioManager.level_select_music)
 
@@ -30,11 +30,9 @@ func _ready() -> void:
 
 	# Setting the circles
 	for i in range(len(select_circles)):
-		if select_circles[i] is SettingsSelectCircle: continue
-
-		if i < level:
+		if i < level + 1:
 			select_circles[i].completed = true
-		elif i > level:
+		elif i > level + 1:
 			select_circles[i].locked = true
 		select_circles[i].update()
 
@@ -46,7 +44,7 @@ func _ready() -> void:
 		var next_circle = select_circles[x + 1]
 		var normal = (circle.position - next_circle.position).normalized()
 
-		select_circles[x].bottom_title = circle.position.y > next_circle.position.y
+		select_circles[x].bottom_title = circle.position.y >= next_circle.position.y
 		select_circles[x].update()
 
 		var dotted_line = dotted_line_scene.instantiate() as Line2D
@@ -59,7 +57,7 @@ func _ready() -> void:
 	# Adding the stars
 	for j in range(stars_amount):
 		var star = star_scene.instantiate() as Sprite2D
-		var x = randf_range(-240, stars_box.x)
+		var x = randf_range(-500, stars_box.x)
 		var y = randf_range(-stars_box.y / 2, stars_box.y / 2)
 		star.position = Vector2(x - 240, y)
 		stars.add_child(star)
@@ -94,11 +92,12 @@ func _process(_delta: float) -> void:
 		if select_circles[index].locked:
 			AudioManager.play_sound(AudioManager.level_locked)
 			camera.shake(0.1, 2)
-		elif select_circles[index] is SettingsSelectCircle:
-			print("ye")
 		elif select_circles[index] is WinSelectCircle:
 			AudioManager.play_sound(AudioManager.win)
 			select_circles[index].confetti_explosion()
+		elif select_circles[index] is VolumeSelectCircle:
+			AudioManager.change_volume()
+			select_circles[index].title_label.text = str(AudioManager.volume) + "%"
 		else:
 			AudioManager.play_sound(AudioManager.level_selected)
 			RoomManager.play_level(select_circles[index].level_resource)

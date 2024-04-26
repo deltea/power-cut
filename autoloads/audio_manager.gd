@@ -17,6 +17,8 @@ var box = preload("res://assets/sfx/box.wav")
 var restart = preload("res://assets/sfx/restart.wav")
 var winning = preload("res://assets/sfx/winning.wav")
 
+var volume = 100
+
 func play_music(music: AudioStream):
 	music_player.stream = music
 	music_player.play()
@@ -29,3 +31,7 @@ func play_sound(sound: AudioStream, randomness: float = 0):
 	player.connect("finished", player.queue_free)
 	add_child(player)
 	player.play()
+
+func change_volume():
+	volume = (volume + 10) % 110
+	AudioServer.set_bus_volume_db(0, linear_to_db(volume / 100.0))

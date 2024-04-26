@@ -20,11 +20,15 @@ var selected = false:
 		border.visible = value
 
 func update():
-	title_label.text = level_resource.name
-	num_label.text = str(num)
-	completed_indicator.visible = completed
-	locked_indicator.visible = locked
 	title_label.position.y = 20 if bottom_title else -32
+	if num > 0:
+		title_label.text = level_resource.name
+		num_label.text = str(num)
+		completed_indicator.visible = completed
+		locked_indicator.visible = locked
+	else:
+		completed_indicator.visible = false
+		locked_indicator.visible = false
 
 func press():
 	sprite.scale(Vector2(1.2, 1.2))
